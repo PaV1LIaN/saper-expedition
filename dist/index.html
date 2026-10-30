@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0a1114">
+  <meta name="description" content="Сапёр: Экспедиция — бесконечное путешествие под поверхность. Исследуй минные поля, находи артефакты и улучшай снаряжение.">
+  <title>Сапёр: Экспедиция — ещё один сектор</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230d191c'/%3E%3Cpath d='M32 9 52 32 32 55 12 32Z' fill='none' stroke='%23c8fa74' stroke-width='4'/%3E%3Cpath d='M24 37V25l14 6-14 6' fill='%23c8fa74'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <symbol id="i-mark" viewBox="0 0 24 24"><path d="m12 2 9 10-9 10L3 12Z"/><path d="M9 16V8l7 3-7 3"/></symbol>
+  <symbol id="i-flag" viewBox="0 0 24 24"><path d="M6 21V3m0 1c4-4 8 4 13 0v10c-5 4-9-4-13 0"/></symbol>
+  <symbol id="i-mine" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 2v4m0 12v4M2 12h4m12 0h4M5 5l3 3m8 8 3 3M5 19l3-3m8-8 3-3"/><path d="M10 10h.01" stroke-width="3"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6Z"/><path d="m8 12 3 3 5-6"/></symbol>
+  <symbol id="i-energy" viewBox="0 0 24 24"><path d="m13 2-9 12h7l-1 8 10-12h-7Z"/></symbol>
+  <symbol id="i-coin" viewBox="0 0 24 24"><path d="m12 2 8.6 5v10L12 22l-8.6-5V7Z"/><path d="m12 7 4 2.5v5L12 17l-4-2.5v-5Z"/></symbol>
+  <symbol id="i-probe" viewBox="0 0 24 24"><path d="M12 3v3m0 12v3M3 12h3m12 0h3"/><circle cx="12" cy="12" r="6"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-radar" viewBox="0 0 24 24"><path d="M20.7 7A10 10 0 1 1 12 2v10l7-7"/><path d="M16.8 8.4A6 6 0 1 1 12 6"/><circle cx="8" cy="15" r="1"/></symbol>
+  <symbol id="i-emp" viewBox="0 0 24 24"><path d="m12 2 2 7 8 3-8 3-2 7-2-7-8-3 8-3Z"/><path d="m19 3 2 2M3 19l2 2"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v16m-6-6 6 6 6-6"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><path d="m3 3 6 18 3-9 9-3Z"/></symbol>
+  <symbol id="i-volume" viewBox="0 0 24 24"><path d="m11 5-6 4H2v6h3l6 4Zm4 3a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></symbol>
+  <symbol id="i-mute" viewBox="0 0 24 24"><path d="m11 5-6 4H2v6h3l6 4Zm5 4 6 6m0-6-6 6"/></symbol>
+  <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 2-3 4m.1 3h.01"/></symbol>
+  <symbol id="i-reset" viewBox="0 0 24 24"><path d="M3 10a9 9 0 1 1 2 8M3 3v7h7"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5Zm-9 5v10l9 4 9-4V8M12 13v9m-5-17 10 6"/></symbol>
+  <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M8 3h8v6a4 4 0 0 1-8 0Zm0 2H3v3c0 3 3 4 5 4m8-7h5v3c0 3-3 4-5 4m-4 1v6m-5 2h10"/></symbol>
+  <symbol id="i-mountain" viewBox="0 0 24 24"><path d="m2 20 7-13 4 7 3-5 6 11ZM7 11l2 2 2-2"/></symbol>
+  <symbol id="i-map" viewBox="0 0 24 24"><path d="m3 5 6-3 6 3 6-3v17l-6 3-6-3-6 3Zm6-3v17m6-14v17"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5ZM20 2v4m-2-2h4"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 5v2"/></symbol>
+  <symbol id="i-save" viewBox="0 0 24 24"><path d="m20 7-9 9-5-5"/></symbol>
+  <symbol id="i-helmet" viewBox="0 0 24 24"><path d="M4 14v-4a8 8 0 0 1 16 0v4m-16 0v5l8 3 8-3v-5Z"/><rect x="6" y="7" width="12" height="7" rx="3"/><path d="M9 17h6"/></symbol>
+</svg>
+
+<div class="ambient" aria-hidden="true"></div>
+<header class="site-header">
+  <a class="brand" href="#" aria-label="Сапёр: Экспедиция, главная"><span class="brand-symbol"><svg class="icon"><use href="#i-mark"/></svg></span><span class="brand-name">САПЁР<span>ЭКСПЕДИЦИЯ</span></span></a>
+  <nav class="header-nav" aria-label="Основное меню"><button class="nav-item active" data-action="play">Экспедиция <span class="nav-dot"></span></button><button class="nav-item" data-action="arsenal">Снаряжение</button><button class="nav-item" data-action="help">Как играть <span class="key-hint">?</span></button></nav>
+  <div class="header-actions"><span class="save-status" id="saveStatus"><span></span>Прогресс сохранён</span><button class="icon-button" id="soundButton" data-action="sound" aria-label="Включить звук" title="Включить звук"><svg class="icon"><use href="#i-mute"/></svg></button><button class="icon-button mobile-help" data-action="help" aria-label="Как играть"><svg class="icon"><use href="#i-help"/></svg></button><button class="icon-button" data-action="restart" aria-label="Новая экспедиция" title="Новая экспедиция"><svg class="icon"><use href="#i-reset"/></svg></button></div>
+</header>
+
+<main class="page-shell">
+  <section class="intro" aria-labelledby="gameTitle"><div><div class="eyebrow"><span class="live-dot"></span> ЗА ПРЕДЕЛАМИ ИЗВЕСТНОГО</div><h1 id="gameTitle">Ещё один сектор<span>.</span></h1><p>Каждый ход — открытие. Каждая глубина — новый риск.</p></div><div class="best-score"><span class="best-icon"><svg class="icon"><use href="#i-trophy"/></svg></span><div><span class="label">ЛИЧНЫЙ РЕКОРД</span><strong id="bestScore">0 <small>очков</small></strong></div></div></section>
+
+  <div class="game-layout">
+    <aside class="left-column" aria-label="Статус экспедиции">
+      <section class="panel expedition-panel">
+        <div class="panel-kicker">ЭКСПЕДИЦИЯ <span class="online-chip">В СЕТИ</span></div>
+        <div class="depth-display"><span id="depthValue">100</span><span class="depth-unit">м<span>ГЛУБИНА</span></span><svg class="icon depth-arrow"><use href="#i-down"/></svg></div>
+        <div class="depth-art" aria-hidden="true"><svg viewBox="0 0 260 94" preserveAspectRatio="none"><path d="M-20 19 12 31 40 8 67 45 104 19 139 46 165 26 198 52 230 20 280 44"/><path d="M-20 41 19 52 42 33 70 66 109 40 142 65 173 48 204 71 242 43 280 67"/><path d="M-20 63 21 74 48 59 76 86 113 64 145 87 179 70 207 91 247 68 280 87"/><path class="terrain-fill" d="M-20 19 12 31 40 8 67 45 104 19 139 46 165 26 198 52 230 20 280 44V110H-20Z"/></svg><span class="depth-marker"></span><span class="art-coord">↓ В НЕИЗВЕСТНОСТЬ</span></div>
+        <div class="resource-row health-row"><div><svg class="icon"><use href="#i-heart"/></svg><span>Здоровье</span></div><div id="hearts" class="hearts" aria-label="3 из 3"></div></div>
+        <div class="resource-row"><div><svg class="icon shield-color"><use href="#i-shield"/></svg><span>Щит</span></div><strong id="shieldValue" class="shield-color">1 <small>/ 3</small></strong></div>
+        <div class="resource-row"><div><svg class="icon energy-color"><use href="#i-energy"/></svg><span>Энергия</span></div><strong id="energyValue">6 <small>/ 8</small></strong></div>
+        <div class="energy-bar" id="energyBar" aria-label="Запас энергии"></div>
+        <div class="resource-bottom"><div><span class="label">КРЕДИТЫ</span><strong><svg class="icon coin-color"><use href="#i-coin"/></svg><span id="coinValue">0</span></strong></div><span class="resource-divider"></span><div><span class="label">ОЧКИ</span><strong id="scoreValue">0</strong></div></div>
+      </section>
+
+      <section class="panel route-panel"><div class="panel-kicker">МАРШРУТ <svg class="icon"><use href="#i-map"/></svg></div><div class="route-list" id="routeList"></div><div class="route-end"><span>∞</span> Глубже. Всегда есть глубже.</div></section>
+      <button class="field-guide" data-action="help"><span class="guide-icon"><svg class="icon"><use href="#i-help"/></svg></span><span><strong>Первый раз в экспедиции?</strong><small>Короткий полевой справочник</small></span><svg class="icon"><use href="#i-arrow"/></svg></button>
+    </aside>
+
+    <section class="board-panel panel" id="boardPanel" aria-label="Игровое поле">
+      <div class="board-heading"><div class="sector-heading"><span class="sector-number" id="sectorNumber">01</span><div><span class="label">ТЕКУЩИЙ СЕКТОР</span><h2 id="biomeName">Зелёный пояс</h2></div></div><div class="mines-count" title="Мины, ещё не отмеченные флагами"><svg class="icon"><use href="#i-mine"/></svg><strong id="mineValue">12</strong><span>мин</span></div></div>
+      <div class="sector-condition" id="condition"><span class="live-dot"></span><span id="conditionText">Тихий сектор</span><span class="condition-description" id="conditionShort">Можно не спешить</span></div>
+      <div class="board-coordinate-top" aria-hidden="true"><span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span><span>I</span><span>J</span></div>
+      <div class="board-wrap" id="boardWrap"><div class="board" id="board" role="grid" aria-label="Минное поле 10 на 10. Стрелки перемещают фокус, Enter открывает, F ставит флаг."></div><div class="board-particles" id="particles" aria-hidden="true"></div></div>
+      <div class="board-message" id="boardMessage"><svg class="icon"><use href="#i-shield"/></svg><span>Начни с любой клетки. Первый ход безопасен.</span></div>
+      <div class="board-controls"><div class="mode-switch" role="group" aria-label="Действие при нажатии"><button id="modeOpen" class="mode-button active" data-action="mode-open" aria-pressed="true"><svg class="icon"><use href="#i-target"/></svg>Открыть</button><button id="modeFlag" class="mode-button" data-action="mode-flag" aria-pressed="false"><svg class="icon"><use href="#i-flag"/></svg>Флаг <kbd>F</kbd></button></div><div class="combo-display" id="comboDisplay"><span class="combo-dots">•••</span><span>Серия</span><strong id="comboValue">×1.00</strong></div></div>
+      <div class="board-footnote"><span><span class="mouse-dot"></span> ЛКМ — открыть</span><span><svg class="icon"><use href="#i-flag"/></svg> ПКМ — флаг</span><span>Нажми на цифру — открыть соседей</span></div>
+    </section>
+
+    <aside class="right-column" aria-label="Снаряжение и цель">
+      <section class="panel equipment-panel"><div class="panel-kicker">СНАРЯЖЕНИЕ <button class="arsenal-link" data-action="arsenal" aria-label="Посмотреть постоянные улучшения">Обзор <svg class="icon"><use href="#i-arrow"/></svg></button></div><p class="equipment-intro">Немного удачи. Немного технологий.</p>
+        <button class="tool-card probe-tool" data-action="probe" id="probeTool"><span class="tool-icon"><svg class="icon"><use href="#i-probe"/></svg></span><span class="tool-copy"><span class="tool-title">Зонд <kbd>1</kbd></span><span class="tool-desc">Откроет безопасную клетку</span><span class="tool-cost free" id="probeCost">1 БЕСПЛАТНО</span></span></button>
+        <button class="tool-card" data-action="sonar" id="sonarTool"><span class="tool-icon"><svg class="icon"><use href="#i-radar"/></svg></span><span class="tool-copy"><span class="tool-title">Сонар <kbd>2</kbd></span><span class="tool-desc">Покажет мины в зоне 3 × 3</span><span class="tool-cost" id="sonarCost"><svg class="icon"><use href="#i-energy"/></svg>3 ЭНЕРГИИ</span></span></button>
+        <button class="tool-card" data-action="emp" id="empTool"><span class="tool-icon"><svg class="icon"><use href="#i-emp"/></svg></span><span class="tool-copy"><span class="tool-title">Импульс <kbd>3</kbd></span><span class="tool-desc">Обезвредит мины в зоне 3 × 3</span><span class="tool-cost" id="empCost"><svg class="icon"><use href="#i-energy"/></svg>5 ЭНЕРГИИ</span></span></button>
+        <div class="regen-note"><svg class="icon"><use href="#i-energy"/></svg><span id="regenNote">+1 энергия за 12 открытых клеток</span></div>
+      </section>
+      <section class="panel goal-panel" id="goalPanel"><div class="panel-kicker">ПУТЬ ДАЛЬШЕ <svg class="icon"><use href="#i-arrow"/></svg></div><div class="goal-progress"><strong id="goalPercent">0<span>%</span></strong><span>сектора<br>исследовано</span><div class="goal-ring" id="goalRing"><svg class="icon"><use href="#i-flag"/></svg></div></div><div class="progress-track"><div id="goalBar"></div><span id="goalMarker" style="left:70%"></span></div><p id="goalText">Открой 70% безопасных клеток, чтобы перейти в следующий сектор.</p><button class="primary-button" id="extractButton" data-action="extract" disabled><svg class="icon"><use href="#i-lock"/></svg><span>Путь ещё закрыт</span></button><div class="full-clear-hint"><svg class="icon"><use href="#i-spark"/></svg><span>Полная зачистка — больше наград</span></div></section>
+    </aside>
+  </div>
+
+  <section class="journal" aria-label="Журнал экспедиции"><div class="journal-label"><span class="live-dot"></span> ЖУРНАЛ</div><div id="journalEntries" class="journal-entries"><span>Связь установлена. Поле ждёт первого хода.</span></div><span class="journal-status">ЛОКАЛЬНОЕ СОХРАНЕНИЕ</span></section>
+  <footer class="page-footer"><span>СПУСК БЕЗ КОНЦА <span class="footer-cross">+</span> САПЁР: ЭКСПЕДИЦИЯ</span><span>Без таймера. В своём ритме. <span class="footer-infinity">∞</span></span></footer>
+</main>
+
+<div id="toastRegion" class="toast-region" role="status" aria-live="polite" aria-atomic="true"></div>
+<dialog id="modal" aria-labelledby="modalTitle"><div id="modalContent"></div></dialog>
+<noscript><div class="noscript">Для игры нужен JavaScript. Включи его в настройках браузера.</div></noscript>
+<script src="engine.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

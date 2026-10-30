@@ -1,0 +1,1134 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0a1114">
+  <meta name="description" content="Сапёр: Экспедиция — бесконечное путешествие под поверхность. Исследуй минные поля, находи артефакты и улучшай снаряжение.">
+  <title>Сапёр: Экспедиция — ещё один сектор</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230d191c'/%3E%3Cpath d='M32 9 52 32 32 55 12 32Z' fill='none' stroke='%23c8fa74' stroke-width='4'/%3E%3Cpath d='M24 37V25l14 6-14 6' fill='%23c8fa74'/%3E%3C/svg%3E">
+  <style>
+:root{color-scheme:dark;--bg:#0a1114;--panel:#101a1d;--panel-light:#152125;--line:#263438;--line-soft:#1d2a2e;--text:#ecf2ef;--muted:#a0afaf;--dim:#7a9091;--accent:#c6f87c;--accent-rgb:198,248,124;--danger:#ff8889;--blue:#8acbe4;--gold:#ebca82;--radius:16px;font-family:Inter,"Segoe UI",Arial,sans-serif;font-synthesis:none}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-size:14px;-webkit-font-smoothing:antialiased}button,a{-webkit-tap-highlight-color:transparent}button{font:inherit;cursor:pointer}button{color:inherit}button:disabled{cursor:not-allowed}button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:4px}button:focus:not(:focus-visible){outline:none}a{color:inherit}svg{flex-shrink:0}.icon{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle}.svg-sprite{position:absolute;width:0;height:0;overflow:hidden}.ambient{pointer-events:none;position:fixed;z-index:-1;inset:0;background:radial-gradient(ellipse at 15% 0%,rgba(92,146,105,.07),transparent 40%),radial-gradient(ellipse at 95% 80%,rgba(64,124,129,.035),transparent 50%)}.site-header{height:86px;display:flex;align-items:center;gap:56px;padding:0 max(34px,calc((100vw - 1312px)/2));border-bottom:1px solid var(--line-soft);background:rgba(10,17,20,.88)}.brand{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0}.brand-symbol{width:43px;height:43px;display:grid;place-items:center;color:var(--accent);background:#17231d;border:1px solid #34432c;border-radius:11px}.brand-symbol .icon{height:31px;width:31px;stroke-width:1.4}.brand-name{font-size:19px;font-weight:850;letter-spacing:3px;line-height:1.15}.brand-name>span{font-size:8px;letter-spacing:2.7px;display:block;color:var(--muted);margin-top:6px;font-weight:600}.header-nav{display:flex;gap:29px;align-self:stretch}.nav-item{position:relative;border:0;background:none;font-size:13px;font-weight:550;padding:0;color:var(--muted);display:flex;align-items:center;gap:8px}.nav-item:hover{color:var(--text)}.nav-item.active{color:var(--accent)}.nav-item.active:after{content:"";position:absolute;bottom:-1px;left:0;right:0;height:2px;background:var(--accent)}.nav-dot,.live-dot{display:inline-block;width:6px;height:6px;background:var(--accent);border-radius:50%;box-shadow:0 0 12px rgba(var(--accent-rgb),.25);flex-shrink:0}.key-hint{border:1px solid var(--line);border-radius:4px;font-size:10px;width:16px;height:16px;display:grid;place-items:center;color:var(--dim)}.header-actions{margin-left:auto;display:flex;align-items:center;gap:8px}.save-status{color:var(--dim);font-size:11px;display:flex;gap:6px;align-items:center;margin-right:16px;white-space:nowrap}.save-status>span{width:5px;height:5px;background:#84b799;border-radius:100%}.save-status.unsaved{color:var(--gold)}.icon-button{display:grid;place-items:center;width:36px;height:36px;border:1px solid var(--line);background:#111b1e;border-radius:9px;color:var(--muted);transition:.2s}.icon-button:hover{color:var(--text);background:#1b292c;border-color:#4b5e5c}.icon-button .icon{width:17px;height:17px}.mobile-help{display:none}.page-shell{max-width:1312px;margin:0 auto;padding:39px 0 0}.intro{display:flex;align-items:center;justify-content:space-between;margin-bottom:29px}.eyebrow{font-size:9px;letter-spacing:2.25px;font-weight:600;color:var(--accent);display:flex;gap:8px;align-items:center}.eyebrow .live-dot{width:5px;height:5px}h1{font-size:37px;letter-spacing:-1.7px;line-height:1.2;font-weight:650;margin:10px 0 10px}h1>span{color:var(--accent)}.intro p{color:var(--muted);font-size:12px;margin:0;letter-spacing:.08px}.best-score{display:flex;gap:13px;align-items:center;padding:10px 6px}.best-icon{background:#1e221b;color:var(--gold);width:43px;height:43px;border-radius:50%;display:grid;place-items:center;border:1px solid #35392b}.best-icon .icon{width:20px}.label{font-size:9px;letter-spacing:1.2px;color:var(--dim);font-weight:650}.best-score strong{font-size:22px;display:block;font-weight:600;font-variant-numeric:tabular-nums;margin-top:6px;line-height:1}.best-score small{font-weight:400;font-size:12px;color:var(--dim);margin-left:2px}.game-layout{display:grid;grid-template-columns:248px minmax(0,1fr) 270px;gap:21px;align-items:start}.left-column,.right-column{display:flex;flex-direction:column;gap:17px;min-width:0}.panel{border:1px solid var(--line);background:linear-gradient(130deg,#121d20,#10191c);border-radius:var(--radius)}.panel-kicker{display:flex;justify-content:space-between;align-items:center;font-size:9px;letter-spacing:1.7px;font-weight:650;color:var(--muted)}.panel-kicker>.icon{width:15px;height:15px;color:var(--dim)}.expedition-panel{overflow:hidden;padding:22px 20px 20px}.online-chip{font-size:7px;letter-spacing:1px;padding:4px 6px;border:1px solid #354c38;color:var(--accent);background:#1e2d20;border-radius:4px}.depth-display{display:flex;gap:9px;align-items:center;margin-top:18px;position:relative;z-index:1}.depth-display>span:first-child{font-size:52px;font-weight:550;letter-spacing:-2px;line-height:1;font-variant-numeric:tabular-nums}.depth-unit{font-size:20px;font-weight:400;color:var(--muted);padding-top:4px}.depth-unit>span{font-size:8px;letter-spacing:1.5px;display:block;margin-top:3px;color:var(--dim)}.depth-arrow{margin-left:auto;width:19px;height:19px;color:var(--accent)}.depth-art{height:82px;margin:13px -20px 12px;position:relative;overflow:hidden;border-bottom:1px solid var(--line-soft)}.depth-art>svg{height:100%;width:100%;stroke:#354b42;stroke-width:1;fill:none}.depth-art .terrain-fill{fill:rgba(var(--accent-rgb),.022);stroke:none}.depth-marker{position:absolute;left:42%;top:18px;width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px rgba(var(--accent-rgb),.08),0 0 20px rgba(var(--accent-rgb),.5)}.depth-marker:after{content:"";position:absolute;left:3px;top:7px;height:50px;border-left:1px dashed #486142}.art-coord{position:absolute;bottom:9px;right:13px;font:7px monospace;letter-spacing:1.4px;color:#6d8d77}.resource-row{display:flex;justify-content:space-between;align-items:center;margin-top:15px;font-size:12px}.resource-row>div:first-child{display:flex;align-items:center;gap:9px;color:var(--muted)}.resource-row .icon{width:15px;height:15px;color:var(--dim)}.resource-row strong{font-size:13px;letter-spacing:.3px;font-variant-numeric:tabular-nums;font-weight:600}.resource-row small{font-size:10px;color:var(--dim);font-weight:500}.health-row .icon{color:var(--danger)}.hearts{display:flex;gap:4px}.hearts .icon{width:16px;height:16px;fill:var(--danger);stroke:var(--danger)}.hearts .icon.empty{fill:none;stroke:#485154}.shield-color{color:var(--blue)!important}.energy-color{color:var(--accent)!important}.coin-color{color:var(--gold)!important}.energy-bar{margin-top:10px;display:flex;gap:4px}.energy-segment{height:5px;flex:1;background:#273633;border-radius:2px}.energy-segment.filled{background:var(--accent)}.resource-bottom{display:flex;gap:24px;margin-top:21px;padding-top:18px;border-top:1px solid var(--line);align-items:center}.resource-bottom strong{display:flex;gap:6px;align-items:center;font-variant-numeric:tabular-nums;font-size:20px;font-weight:550;margin-top:7px;letter-spacing:-.4px}.resource-bottom .icon{width:17px;height:17px}.resource-bottom .label{font-size:8px}.resource-divider{height:29px;width:1px;background:var(--line)}.route-panel{padding:20px}.route-list{margin-top:19px}.route-item{display:flex;gap:13px;position:relative;padding-bottom:22px}.route-item:not(:last-child):before{content:"";position:absolute;top:25px;bottom:4px;left:11px;border-left:1px dashed #3c4c46}.route-item:last-child{padding-bottom:0}.route-node{width:24px;height:24px;border:1px solid #35423f;border-radius:50%;display:grid;place-items:center;color:var(--dim);font:9px monospace;flex-shrink:0}.route-item.current .route-node{background:rgba(var(--accent-rgb),.1);color:var(--accent);border-color:#6c8a46;box-shadow:0 0 0 4px rgba(var(--accent-rgb),.025)}.route-item.current .route-node .icon{width:12px;height:12px}.route-copy{padding-top:1px}.route-copy strong{display:block;font-size:11px;font-weight:500;color:var(--dim);line-height:1.3}.route-item.current .route-copy strong{color:var(--text)}.route-copy small{font-size:9px;color:var(--dim);display:block;margin-top:4px}.route-item.current .route-copy small{color:var(--accent)}.route-end{display:flex;align-items:center;gap:12px;padding-top:17px;margin-top:16px;border-top:1px solid var(--line-soft);color:var(--dim);font-size:9px}.route-end>span{font-size:22px;line-height:16px;color:#809d88}.field-guide{border:none;text-align:left;background:none;display:flex;align-items:center;gap:9px;color:var(--muted);padding:2px 4px}.guide-icon{height:27px;width:27px;display:grid;place-items:center;color:var(--dim)}.guide-icon .icon{height:19px;width:19px}.field-guide strong{font-size:10px;font-weight:500;display:block}.field-guide small{font-size:9px;color:var(--dim);display:block;margin-top:5px}.field-guide>.icon{width:13px;height:13px;margin-left:auto}.field-guide:hover{color:var(--accent)}
+.board-panel{padding:24px 26px 16px;position:relative;background:linear-gradient(150deg,#132024,#111a1d);min-width:0;box-shadow:0 12px 48px rgba(0,0,0,.12)}.board-heading{display:flex;justify-content:space-between;align-items:center;gap:8px}.sector-heading{display:flex;gap:12px;align-items:center}.sector-number{font:400 25px "Consolas",monospace;color:var(--accent);border-right:1px solid #354439;padding-right:13px}.sector-heading .label{font-size:8px;letter-spacing:1.5px}.sector-heading h2{font-size:15px;font-weight:550;margin:5px 0 0;letter-spacing:-.2px}.mines-count{display:flex;align-items:center;gap:7px;padding:9px 11px;border-radius:8px;background:#1c292b;border:1px solid #2c3b3e;color:var(--muted)}.mines-count .icon{width:15px;height:15px;color:#a8b9b6}.mines-count strong{font:500 14px "Consolas",monospace;color:var(--text)}.mines-count>span{font-size:10px}.sector-condition{margin-top:19px;padding:10px 0 13px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:7px;color:#a9c9a9;font-size:10px}.sector-condition .live-dot{width:4px;height:4px;background:#8aae84}.condition-description{margin-left:auto;font-size:9px;color:var(--dim);text-align:right}.sector-condition.danger{color:var(--gold)}.sector-condition.danger .live-dot{background:var(--gold)}.board-coordinate-top{display:grid;grid-template-columns:repeat(10,1fr);font:8px "Consolas",monospace;color:#6f8586;text-align:center;padding:16px 0 9px}.board-wrap{position:relative;isolation:isolate}.board{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:5px;position:relative;border:1px solid #263637;border-radius:10px;padding:7px;background:#0a1417;touch-action:manipulation;user-select:none;-webkit-user-select:none}.cell{padding:0;width:100%;aspect-ratio:1;border:1px solid #344447;border-radius:5px;background:linear-gradient(145deg,#27383b,#223034);box-shadow:inset 0 1px 0 rgba(190,219,205,.035),0 2px 1px #060e10;position:relative;display:grid;place-items:center;font:600 clamp(15px,1.45vw,20px) "Consolas","Courier New",monospace;transition:background .12s,border-color .12s,transform .12s;touch-action:manipulation;line-height:1;color:var(--text);min-width:0}.cell:not(.revealed):not(.flagged):not(.scanned):after{content:"";width:3px;height:3px;border-radius:50%;background:rgba(165,191,185,.16)}.cell:hover:not(:disabled):not(.revealed){background:#344943;border-color:#779265;transform:translateY(-1px)}.cell:focus-visible{outline:2px solid var(--accent);outline-offset:0;z-index:3}.cell.revealed{border-color:#1c2b2e;background:#111e22;box-shadow:none}.cell.revealed:hover:not(:disabled){background:#1b2a2d}.cell.revealed.n0{background:#0e1b1e;border-color:#18272b}.cell.n1{color:#8ad6c1}.cell.n2{color:#a6d975}.cell.n3{color:#e6be80}.cell.n4{color:#bba0ed}.cell.n5{color:#f89c93}.cell.n6{color:#7ad3df}.cell.n7{color:#e2a3ce}.cell.n8{color:#f5d5b3}.cell .icon{width:45%;height:45%;stroke-width:1.9}.cell.flagged{background:#302d2b;border-color:#61534b;color:#f3bc8a}.cell.scanned:not(.revealed){background:#203630;border-color:#4e7555;color:#bce890}.cell.scanned.mine-known{background:#36282a;border-color:#7c4e4e;color:#f19791}.cell.exploded{background:#4e282a;border-color:#98534f;color:#ffb2a7}.cell.gameover-mine{background:#2b2224;border-color:#493034;color:#9f6a65}.cell.wrong-flag{color:var(--danger);border-color:var(--danger)}.cell.target-zone{border-color:var(--accent)!important;background:#344f3d!important;box-shadow:0 0 12px rgba(var(--accent-rgb),.12)}.cell.target-zone.emp-zone{border-color:#cbb0ff!important;background:#3b3550!important}.cell.neutralized{border-color:#4c6658}.neutralized-mark{position:absolute;width:4px;height:4px;bottom:4px;right:4px;background:var(--accent);border-radius:50%}.loot-mark{position:absolute;width:5px;height:5px;right:3px;top:3px;background:var(--gold);border-radius:1px;transform:rotate(45deg);box-shadow:0 0 6px #ebca8244}.cell.just-opened{animation:cell-in .3s ease both}.cell.safe-start{border-color:#67834a;background:linear-gradient(145deg,#314535,#26352d);box-shadow:0 0 20px rgba(var(--accent-rgb),.05)}.cell.safe-start:before{content:"";position:absolute;inset:23%;border:1px solid rgba(var(--accent-rgb),.5);border-radius:50%}.board.is-targeting .cell{cursor:crosshair}.board-message{min-height:46px;display:flex;align-items:center;justify-content:center;gap:7px;text-align:center;font-size:10px;color:#a2b59c;padding:10px 0;line-height:1.5}.board-message .icon{width:14px;height:14px;color:var(--accent)}.board-message.tool-message{color:var(--accent)}.board-message.tool-message button{border:0;background:none;font-size:10px;color:var(--muted);text-decoration:underline;padding:3px}.board-message.warning{color:var(--gold)}.board-controls{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:15px;gap:8px}.mode-switch{display:flex;padding:4px;background:#0c171a;border:1px solid #273538;border-radius:8px;gap:3px}.mode-button{background:transparent;border:1px solid transparent;border-radius:5px;padding:7px 11px;font-size:10px;display:flex;gap:6px;align-items:center;color:var(--muted);min-height:32px}.mode-button.active{background:#24342b;border-color:#3c5037;color:var(--accent)}.mode-button .icon{width:13px;height:13px}.mode-button kbd{margin-left:3px;color:var(--dim);border-color:#3a4742}.combo-display{display:flex;gap:6px;align-items:center;font-size:10px;color:var(--dim)}.combo-display strong{font-family:monospace;color:var(--muted);font-size:13px;font-weight:500}.combo-display.hot strong{color:var(--accent)}.combo-dots{letter-spacing:2px;color:#596e59;font-size:12px}.combo-display.hot .combo-dots{color:var(--accent)}.board-footnote{display:flex;justify-content:center;gap:13px;color:var(--dim);font-size:8px;margin-top:14px;flex-wrap:wrap}.board-footnote>span{display:flex;gap:4px;align-items:center}.board-footnote .icon{width:10px;height:10px}.mouse-dot{height:9px;width:6px;border:1px solid var(--dim);border-radius:3px;display:inline-block}.mouse-dot:after{content:"";height:3px;border-left:1px solid var(--dim);display:block;margin-left:2px}.board-particles{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:10}.particle{position:absolute;width:4px;height:4px;top:50%;left:50%;background:var(--accent);border-radius:2px;animation:particle .7s ease-out forwards}.board-wrap.shake{animation:shake .32s ease}.board-wrap.pulse:after{content:"";position:absolute;inset:0;border:2px solid var(--accent);border-radius:10px;pointer-events:none;animation:pulse .6s ease-out forwards}
+.equipment-panel{padding:22px 18px 17px}.subtle-number{color:var(--dim);font:9px monospace}.equipment-intro{font-size:10px;color:var(--dim);margin:9px 0 19px}.tool-card{width:100%;display:flex;gap:12px;align-items:flex-start;text-align:left;border:1px solid #2b3c3e;background:linear-gradient(120deg,#19272a,#172326);padding:14px 12px;border-radius:10px;margin-bottom:9px;transition:.2s;position:relative}.tool-card:hover:not(:disabled),.tool-card.selected{border-color:#667e4c;background:#21322a;transform:translateY(-1px)}.tool-card.selected{box-shadow:0 0 0 1px #637e4c}.tool-card:disabled{opacity:.47}.tool-icon{height:34px;width:34px;border-radius:8px;display:grid;place-items:center;background:#22312f;border:1px solid #36483d;color:var(--accent);flex-shrink:0}.tool-icon>.icon{width:20px;height:20px}.tool-copy{flex:1;min-width:0}.tool-title{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:13px;font-weight:550;margin-top:1px}.tool-title>kbd{color:var(--dim)}kbd{font:8px monospace;display:inline-grid;place-items:center;min-width:15px;height:15px;border:1px solid #3b4948;border-radius:3px;background:#121f20}.tool-desc{display:block;color:var(--muted);font-size:9px;margin-top:6px;line-height:1.4}.tool-cost{display:flex;gap:4px;align-items:center;color:var(--dim);font-size:8px;letter-spacing:.5px;margin-top:10px}.tool-cost.free{color:var(--accent)}.tool-cost .icon{height:10px;width:10px;color:var(--accent)}.regen-note{display:flex;align-items:center;gap:6px;color:var(--dim);font-size:8px;line-height:1.5;margin:16px 1px 0}.regen-note .icon{color:var(--accent);width:12px;height:12px}.goal-panel{padding:21px 20px;background:linear-gradient(140deg,#19231d,#131c1b);border-color:#354331}.goal-panel .panel-kicker{color:#a8b894}.goal-progress{display:flex;gap:10px;align-items:center;margin:20px 0 15px}.goal-progress>strong{font-size:34px;font-weight:550;letter-spacing:-1.4px;font-variant-numeric:tabular-nums}.goal-progress>strong>span{font-size:21px;color:#91a77d;margin-left:2px;letter-spacing:0}.goal-progress>span{font-size:9px;line-height:1.65;color:#94a389}.goal-ring{width:41px;height:41px;border-radius:50%;margin-left:auto;border:1px solid #3d5034;display:grid;place-items:center;background:conic-gradient(var(--accent) var(--progress,0%),#263521 0);position:relative}.goal-ring:before{content:"";position:absolute;inset:3px;border-radius:50%;background:#19221b}.goal-ring .icon{position:relative;width:16px;height:16px;color:var(--accent)}.progress-track{position:relative;height:5px;background:#2d3c27;border-radius:4px}.progress-track>div{height:5px;width:0%;background:var(--accent);border-radius:4px;transition:width .3s}.progress-track>span{height:9px;width:2px;background:#89a26d;position:absolute;top:-2px}.goal-panel>p{font-size:10px;line-height:1.8;color:#a1af96;margin:14px 0 19px;min-height:36px}.primary-button{display:flex;gap:8px;justify-content:center;align-items:center;border:1px solid var(--accent);background:var(--accent);color:#1b2b16;border-radius:8px;padding:12px 14px;font-size:11px;font-weight:650;min-height:42px;transition:background .15s,transform .15s}.primary-button:hover:not(:disabled){background:#ddffab;transform:translateY(-1px)}.primary-button:disabled{color:#77866c;border-color:#3b4b31;background:#273520}.primary-button .icon{width:15px;height:15px}.goal-panel .primary-button{width:100%}.goal-panel.ready{border-color:#789553;box-shadow:0 0 35px #c6f87c08}.full-clear-hint{display:flex;gap:5px;align-items:center;justify-content:center;font-size:8px;color:#96aa81;margin-top:13px}.full-clear-hint .icon{width:12px;height:12px}.journal{display:flex;gap:17px;align-items:center;padding:17px 18px;border:1px solid var(--line-soft);background:#0e181a;border-radius:10px;margin-top:23px;min-height:52px}.journal-label{font-size:8px;letter-spacing:1.2px;color:var(--muted);display:flex;align-items:center;gap:7px;flex-shrink:0}.journal-label .live-dot{height:4px;width:4px}.journal-entries{color:#8fa09b;font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1}.journal-entries .log-time{color:#657c70;margin-right:9px;font:9px monospace}.journal-entries .log-new{color:#b5c3ac}.journal-status{font:7px monospace;letter-spacing:1.2px;color:#647d6d;flex-shrink:0}.page-footer{display:flex;align-items:center;justify-content:space-between;padding:22px 0 24px;font-size:8px;letter-spacing:1px;color:#708481}.page-footer>span:last-child{letter-spacing:.3px;font-size:9px}.footer-cross{color:#91ae79;padding:0 10px}.footer-infinity{font-size:19px;color:#87a574;margin-left:12px;vertical-align:middle}.toast-region{position:fixed;left:50%;bottom:28px;transform:translateX(-50%);z-index:100;display:flex;flex-direction:column;gap:8px;pointer-events:none;width:max-content;max-width:calc(100vw - 32px)}.toast{background:#223429;border:1px solid #638350;color:#e3f6d5;padding:13px 20px;border-radius:10px;box-shadow:0 10px 40px #0007;font-size:12px;line-height:1.6;animation:toast-in .25s ease;display:flex;gap:9px;align-items:center;max-width:520px}.toast.error{background:#392b27;border-color:#865c45;color:#ffdac6}.toast .icon{width:17px;height:17px}.toast.out{opacity:0;transform:translateY(8px);transition:.2s}dialog{padding:0;border:1px solid #405249;border-radius:20px;background:#131f22;color:var(--text);width:min(720px,calc(100vw - 32px));max-height:min(90dvh,900px);box-shadow:0 30px 130px #0009;overflow:visible}dialog::backdrop{background:rgba(3,9,12,.78);backdrop-filter:blur(7px)}dialog[open]{animation:modal-in .22s ease}#modalContent{padding:34px;max-height:min(90dvh,900px);overflow:auto;border-radius:20px}.modal-close{position:absolute;right:15px;top:15px;z-index:2}.modal-eyebrow{font-size:9px;letter-spacing:2px;color:var(--accent);margin-bottom:12px;display:flex;align-items:center;gap:7px}.modal-eyebrow .icon{height:15px;width:15px}.modal-title{font-size:29px;font-weight:600;letter-spacing:-1px;line-height:1.25;margin:0 32px 12px 0}.modal-intro{font-size:13px;line-height:1.8;color:var(--muted);margin:0 0 22px}.help-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.help-card{background:#1b292c;border:1px solid #30403f;border-radius:12px;padding:18px}.help-card h3{font-size:13px;display:flex;gap:8px;align-items:center;margin:0 0 10px;font-weight:550}.help-card h3 .icon{color:var(--accent);width:17px;height:17px}.help-card p{font-size:11px;line-height:1.8;margin:0;color:var(--muted)}.help-demo{display:flex;gap:5px;margin:13px 0 0}.demo-cell{height:30px;width:30px;border-radius:4px;background:#26383b;border:1px solid #425350;display:grid;place-items:center;font:bold 17px monospace}.demo-cell.open{color:#8ad6c1;background:#112023;border-color:#263b37}.demo-cell .icon{width:16px;height:16px;color:var(--gold)}.modal-footer{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:23px;padding-top:20px;border-top:1px solid #30413e}.modal-note{font-size:10px;line-height:1.7;color:var(--dim)}.secondary-button{background:#1c2b2d;border:1px solid #3c4c47;border-radius:8px;padding:12px 18px;color:var(--muted);font-size:11px;min-height:42px}.secondary-button:hover{background:#2b3c36;color:var(--text)}.reward-summary{display:flex;gap:12px;flex-wrap:wrap;background:#1e2e24;border:1px solid #43563a;border-radius:10px;padding:14px 18px;margin-bottom:23px;font-size:12px}.reward-summary>span{display:flex;gap:6px;align-items:center;color:#d5e9bd}.reward-summary .icon{height:16px;width:16px;color:var(--gold)}.section-label{font-size:9px;letter-spacing:1.2px;color:var(--dim);margin:20px 0 12px}.upgrade-options{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.upgrade-card{position:relative;text-align:left;background:linear-gradient(130deg,#20332a,#182528);border:1px solid #40523c;border-radius:13px;padding:18px 15px;min-height:202px;display:flex;flex-direction:column;transition:.2s}.upgrade-card:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 8px 24px #c6f87c0a}.upgrade-card .upgrade-icon{display:grid;place-items:center;width:39px;height:39px;border:1px solid #516344;border-radius:10px;color:var(--accent);background:#2b3d28;margin-bottom:17px}.upgrade-card h3{font-size:13px;line-height:1.5;margin:0 0 9px}.upgrade-card p{font-size:10px;line-height:1.7;color:var(--muted);margin:0 0 16px}.upgrade-card .choose-label{display:flex;justify-content:space-between;align-items:center;color:var(--accent);font-size:9px;margin-top:auto;padding-top:8px}.choose-label .icon{width:13px;height:13px}.shop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.shop-button{border:1px solid #354640;background:#1a2829;display:flex;gap:9px;align-items:center;text-align:left;padding:12px 9px;border-radius:9px;position:relative}.shop-button>.icon{width:18px;height:18px;color:var(--accent)}.shop-button strong{font-size:10px;font-weight:550;display:block}.shop-button small{font-size:9px;color:var(--gold);display:flex;align-items:center;gap:4px;margin-top:5px}.shop-button small .icon{width:11px;height:11px}.shop-button:disabled{opacity:.4}.shop-button:hover:not(:disabled){border-color:var(--accent)}.modal-stats{display:flex;gap:15px;justify-content:space-around;padding:23px 0;margin:20px 0;border-top:1px solid #35443f;border-bottom:1px solid #35443f}.modal-stat{text-align:center}.modal-stat strong{font-size:30px;letter-spacing:-1px;display:block;font-weight:550}.modal-stat span{font-size:9px;color:var(--dim);display:block;margin-top:7px;letter-spacing:.6px}.gameover-art{width:60px;height:60px;display:grid;place-items:center;background:#3c2a2b;border:1px solid #77524c;border-radius:17px;color:var(--danger);margin-bottom:22px}.gameover-art .icon{width:32px;height:32px}.arsenal-list{display:grid;grid-template-columns:1fr 1fr;gap:10px}.arsenal-item{border:1px solid #30433c;border-radius:10px;padding:15px;display:flex;align-items:center;gap:12px;background:#1b2b26}.arsenal-item>.icon{color:var(--accent)}.arsenal-item strong{font-size:11px;display:block}.arsenal-item p{font-size:10px;line-height:1.6;color:var(--muted);margin:5px 0 0}.arsenal-empty{border:1px dashed #3b5041;border-radius:12px;padding:26px;text-align:center;color:var(--muted);font-size:12px;line-height:1.9}.motion-setting{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--muted);margin:20px 0 0}.motion-setting input{accent-color:var(--accent);width:15px;height:15px}.noscript{position:fixed;inset:0;background:#111e21;display:grid;place-items:center;padding:40px;font-size:22px;text-align:center;z-index:200}.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@keyframes cell-in{from{transform:scale(.75);filter:brightness(1.8)}to{transform:scale(1);filter:brightness(1)}}@keyframes toast-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}@keyframes modal-in{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:none}}@keyframes shake{20%,60%{transform:translateX(-5px)}40%,80%{transform:translateX(5px)}100%{transform:none}}@keyframes pulse{from{opacity:1;box-shadow:inset 0 0 60px #c6f87c22}to{opacity:0;box-shadow:inset 0 0 0 transparent}}@keyframes particle{to{transform:translate(var(--tx),var(--ty)) rotate(180deg);opacity:0}}
+@media(min-width:1500px){.page-shell{padding-top:45px}.intro{margin-bottom:35px}.game-layout{grid-template-columns:256px minmax(0,1fr) 278px;gap:24px}.board{gap:6px}.board-panel{padding:25px 28px 18px}}
+@media(max-width:1400px){.page-shell{margin:0 34px}.site-header{gap:42px}.game-layout{grid-template-columns:225px minmax(0,1fr) 245px;gap:18px}.board-panel{padding:22px 22px 16px}.tool-card{gap:10px;padding:13px 10px}.equipment-panel{padding:21px 15px 17px}.equipment-intro{font-size:9px}.tool-icon{width:30px;height:30px}.tool-desc{font-size:8px}.resource-bottom{gap:20px}.depth-display>span:first-child{font-size:49px}}
+@media(max-width:1190px){.game-layout{grid-template-columns:200px minmax(0,1fr) 220px;gap:15px}.page-shell{margin:0 25px;padding-top:30px}.site-header{padding:0 25px;gap:34px}.save-status{display:none}.expedition-panel{padding:20px 16px 17px}.depth-art{margin-left:-16px;margin-right:-16px}.route-panel{padding:18px 16px}.board-panel{padding:20px 16px 15px}.sector-heading{gap:9px}.sector-heading h2{font-size:13px}.sector-number{font-size:22px;padding-right:9px}.board{gap:4px;padding:6px}.cell{font-size:18px}.board-footnote{font-size:7px;gap:8px}.mode-button{padding:6px 9px;font-size:9px}.combo-display{gap:4px;font-size:9px}.combo-dots{display:none}.equipment-panel{padding:20px 13px 16px}.tool-card{gap:8px;padding:12px 9px}.tool-icon{width:28px;height:28px}.tool-icon>.icon{width:17px;height:17px}.tool-title{font-size:12px}.tool-desc{font-size:8px;letter-spacing:-.1px}.goal-panel{padding:20px 15px}.intro h1{font-size:34px}.condition-description{font-size:8px}.resource-row{font-size:11px}.journal{margin-top:18px}.field-guide strong{font-size:9px}.field-guide small{font-size:8px}}
+@media(max-width:1020px){.game-layout{grid-template-columns:minmax(0,1fr) 255px;gap:18px}.left-column{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:18px}.expedition-panel{display:grid;grid-template-columns:150px 1fr 1fr;column-gap:18px;align-items:center;padding:18px 21px;grid-column:1/-1}.expedition-panel>.panel-kicker{grid-column:1}.depth-display{grid-row:2/4;grid-column:1;margin-top:3px}.depth-display>span:first-child{font-size:39px}.depth-unit{font-size:15px}.depth-unit>span{font-size:7px}.depth-arrow{display:none}.depth-art{display:none}.health-row{grid-column:2;grid-row:1;margin:0}.expedition-panel>.resource-row:nth-of-type(5){grid-column:2;grid-row:2;margin:11px 0 0}.expedition-panel>.resource-row:nth-of-type(6){grid-column:3;grid-row:1;margin:0}.energy-bar{grid-column:3;grid-row:2}.resource-bottom{grid-column:2/4;grid-row:3;justify-content:space-between;margin-top:10px;padding-top:10px;gap:10px}.resource-bottom>div{display:flex;gap:10px;align-items:center}.resource-bottom strong{font-size:16px;margin-top:0}.resource-bottom .label{font-size:7px}.resource-divider{display:none}.online-chip{display:none}.route-panel,.field-guide{display:none}.board-panel{padding:22px 24px 17px}.board{gap:5px;padding:7px}.cell{font-size:20px}.equipment-panel{padding:23px 17px}.tool-card{gap:12px;padding:15px 11px}.tool-icon{width:31px;height:31px}.tool-title{font-size:13px}.tool-desc{font-size:9px}.goal-panel{padding:22px 18px}.intro{margin-bottom:24px}.header-nav{gap:24px}.site-header{height:76px}.board-footnote{font-size:8px}.journal-status{display:none}}
+@media(max-width:760px){.site-header{padding:0 20px;height:72px;gap:20px}.header-nav{gap:18px}.nav-item{font-size:11px}.nav-item[data-action=arsenal]{display:none}.page-shell{margin:0 20px;padding-top:25px}.game-layout{grid-template-columns:1fr;gap:16px;max-width:560px;margin:0 auto}.left-column{display:block;grid-column:auto}.expedition-panel{grid-template-columns:125px 1fr 1fr;padding:16px 18px;column-gap:17px;border-radius:12px}.intro{max-width:560px;margin:0 auto 23px}.intro h1{font-size:31px;margin:9px 0 9px}.intro p{font-size:10px}.eyebrow{font-size:8px;letter-spacing:1.6px}.best-score{gap:8px}.best-icon{width:34px;height:34px}.best-icon .icon{width:17px}.best-score .label{font-size:7px;letter-spacing:.6px}.best-score strong{font-size:19px}.best-score small{font-size:9px}.board-panel{padding:21px 23px 17px;border-radius:14px}.cell{font-size:21px}.right-column{display:grid;grid-template-columns:1fr;gap:16px}.equipment-panel{padding:18px 18px 14px}.equipment-intro{display:none}.equipment-panel .panel-kicker{margin-bottom:14px}.tool-card{display:inline-flex;flex-direction:column;width:calc((100% - 18px)/3);vertical-align:top;gap:10px;min-height:143px;padding:12px 11px;margin:0 5px 0 0}.tool-card:nth-of-type(3){margin-right:0}.tool-icon{width:29px;height:29px}.tool-copy{width:100%}.tool-title{font-size:12px}.tool-desc{font-size:9px;min-height:25px;line-height:1.5}.tool-title kbd{display:none}.tool-cost{font-size:7px;white-space:nowrap;margin-top:10px}.regen-note{justify-content:center;margin-top:13px;font-size:9px}.goal-panel{padding:18px;display:grid;grid-template-columns:1fr 1fr;column-gap:20px;align-items:center}.goal-panel>.panel-kicker{grid-column:1/-1}.goal-progress{margin:16px 0 10px;grid-column:1}.goal-ring{width:34px;height:34px}.goal-progress>strong{font-size:31px}.goal-panel .progress-track{grid-column:1;grid-row:3}.goal-panel>p{grid-column:1;grid-row:4;font-size:9px;margin:11px 0 0;min-height:0}.goal-panel>.primary-button{grid-column:2;grid-row:2/4;align-self:end;padding:12px 9px;font-size:10px}.full-clear-hint{grid-column:2;grid-row:4;text-align:center;font-size:8px;line-height:1.7}.full-clear-hint>.icon{display:none}.journal{max-width:560px;margin:18px auto 0;padding:14px 15px;gap:12px}.journal-entries{font-size:9px}.page-footer{max-width:560px;margin:auto;padding:22px 0;font-size:7px;letter-spacing:.7px}.page-footer>span:last-child{font-size:8px}.footer-cross{padding:0 6px}.footer-infinity{margin-left:6px}.board-controls{padding-top:13px}.mode-button{font-size:11px;padding:8px 14px}.combo-display{font-size:10px}.combo-dots{display:block}.board-message{font-size:10px;min-height:42px}.board-footnote{font-size:8px}.board-footnote>span:nth-child(-n+2){display:none}.board-footnote>span:last-child:after{content:" · Удержание — флаг"}.board-footnote>span:last-child{display:block}#modalContent{padding:28px}.modal-title{font-size:26px}.modal-intro{font-size:12px}}
+@media(max-width:480px){.site-header{padding:0 16px;height:65px}.brand{gap:9px}.brand-symbol{width:35px;height:35px;border-radius:9px}.brand-symbol .icon{width:25px;height:25px}.brand-name{font-size:16px;letter-spacing:2.8px}.brand-name>span{font-size:6px;letter-spacing:2.5px;margin-top:5px}.header-nav{display:none}.mobile-help{display:grid}.header-actions{gap:6px}.icon-button{width:32px;height:32px;border-radius:8px}.icon-button .icon{height:16px;width:16px}.page-shell{margin:0 13px;padding-top:24px}.intro{margin-bottom:20px;align-items:flex-start}.intro h1{font-size:29px;letter-spacing:-1.3px}.intro p{font-size:9px;line-height:1.6;max-width:240px}.eyebrow{font-size:6.5px;letter-spacing:1.3px}.eyebrow .live-dot{width:4px;height:4px}.best-score{padding:4px 0;gap:0;display:block;text-align:right}.best-icon{display:none}.best-score .label{font-size:6px;letter-spacing:.6px}.best-score strong{font-size:20px;line-height:1.2;margin-top:4px}.best-score small{display:block;font-size:8px;margin:3px 0 0}.expedition-panel{grid-template-columns:94px 1fr 1fr;padding:15px 14px;gap:0 13px}.panel-kicker{font-size:8px;letter-spacing:1.4px}.expedition-panel>.panel-kicker{font-size:6.5px;letter-spacing:1px}.depth-display{gap:5px}.depth-display>span:first-child{font-size:34px;letter-spacing:-1.5px}.depth-unit{font-size:14px}.depth-unit>span{font-size:6px;letter-spacing:1px}.resource-row>div:first-child{gap:5px}.resource-row>div:first-child>span{font-size:9px}.resource-row .icon{width:12px;height:12px}.hearts{gap:2px}.hearts .icon{width:11px;height:11px}.resource-row strong{font-size:11px}.resource-row small{font-size:8px}.resource-bottom{padding-top:8px;margin-top:9px}.resource-bottom>div{gap:6px}.resource-bottom strong{font-size:14px}.resource-bottom .label{font-size:6px;letter-spacing:.7px}.resource-bottom .icon{width:12px;height:12px}.energy-bar{gap:3px;margin-top:8px}.energy-segment{height:4px}.board-panel{padding:18px 13px 13px}.board-heading{gap:5px}.sector-heading h2{font-size:14px}.sector-heading .label{font-size:7px;letter-spacing:1.3px}.sector-number{font-size:23px;padding-right:11px}.sector-heading{gap:11px}.mines-count{padding:8px;gap:5px}.mines-count .icon{width:13px;height:13px}.mines-count strong{font-size:12px}.mines-count>span{font-size:8px}.sector-condition{margin-top:15px;padding-bottom:12px;font-size:9px;gap:6px}.condition-description{font-size:7.5px;max-width:46%;line-height:1.5}.board-coordinate-top{font-size:7px;padding:12px 0 7px}.board{gap:3px;padding:5px;border-radius:8px}.cell{border-radius:4px;font-size:16px;box-shadow:inset 0 1px 0 #c6f87c04,0 1px 1px #0008}.cell:not(.revealed):not(.flagged):not(.scanned):after{height:2px;width:2px}.board-message{font-size:8.5px;min-height:42px;gap:5px}.board-message .icon{width:12px;height:12px}.mode-button{padding:7px 11px;font-size:10px;gap:5px;min-height:32px}.mode-button kbd{display:none}.combo-display{font-size:9px;gap:5px}.combo-display strong{font-size:12px}.combo-dots{display:none}.board-footnote{font-size:7px;margin-top:12px}.equipment-panel{padding:17px 12px 13px}.tool-card{padding:11px 8px;width:calc((100% - 16px)/3);margin-right:4px;min-height:141px;gap:10px}.tool-title{font-size:11px}.tool-desc{font-size:8px;min-height:24px;letter-spacing:0}.tool-cost{font-size:6.5px;letter-spacing:0}.tool-icon{width:27px;height:27px;border-radius:7px}.tool-icon .icon{width:17px;height:17px}.regen-note{font-size:8px;margin-top:13px}.goal-panel{padding:18px 16px;column-gap:16px}.goal-progress{gap:8px}.goal-progress>span{font-size:8px}.goal-ring{width:29px;height:29px}.goal-ring .icon{width:12px;height:12px}.goal-progress>strong{font-size:29px}.goal-panel>.primary-button{font-size:9px;padding:12px 7px;gap:5px}.primary-button>.icon{width:12px;height:12px}.goal-panel>p{font-size:8px;line-height:1.8}.full-clear-hint{font-size:7px}.journal{gap:9px;padding:13px 12px}.journal-label{font-size:6.5px;gap:5px;letter-spacing:1px}.journal-entries{font-size:8px}.journal-entries .log-time{display:none}.page-footer{display:block;text-align:center;line-height:2.4;padding-bottom:15px}.page-footer>span{display:block}.page-footer>span:last-child{font-size:7px}.footer-infinity{font-size:14px}.toast-region{bottom:16px}.toast{font-size:11px;padding:12px 14px}.upgrade-options{grid-template-columns:1fr;gap:9px}.upgrade-card{min-height:0;padding:14px 14px 14px 67px;display:block}.upgrade-card .upgrade-icon{position:absolute;top:15px;left:14px;width:36px;height:36px;margin:0}.upgrade-card h3{font-size:12px;margin-bottom:5px}.upgrade-card p{font-size:10px;margin-bottom:8px}.upgrade-card .choose-label{font-size:8px;padding:0}.upgrade-card:hover{transform:none}.modal-title{font-size:23px}#modalContent{padding:26px 20px 22px}.modal-intro{font-size:11px;line-height:1.8;margin-bottom:17px}.modal-eyebrow{font-size:8px;letter-spacing:1.5px}.help-grid{grid-template-columns:1fr;gap:10px}.help-card{padding:15px}.help-card h3{font-size:12px}.help-card p{font-size:10px}.help-demo{display:none}.modal-footer{align-items:stretch;flex-direction:column;margin-top:17px;padding-top:16px}.modal-footer>button{width:100%}.modal-note{font-size:9px}.shop-grid{gap:6px}.shop-button{padding:11px 7px;gap:6px}.shop-button strong{font-size:8px}.shop-button>.icon{width:13px;height:13px}.shop-button small{font-size:8px}.reward-summary{font-size:10px;gap:10px;padding:12px;margin-bottom:18px}.arsenal-list{grid-template-columns:1fr}.modal-stats{gap:10px}.modal-stat strong{font-size:24px}.modal-stat span{font-size:8px}.modal-close{width:28px;height:28px;top:12px;right:12px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}body.reduced-motion *,body.reduced-motion *:before,body.reduced-motion *:after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+/* Keep the complete tactical board readable without an oversized desktop canvas. */
+@media(min-width:1021px){.page-shell{max-width:1120px;width:calc(100% - 64px);margin:0 auto;padding-top:27px}.site-header{height:74px;padding-inline:max(32px,calc((100vw - 1120px)/2));gap:38px}.intro{margin-bottom:23px}.intro h1{font-size:34px;margin-top:8px;margin-bottom:8px}.game-layout{grid-template-columns:240px minmax(0,1fr) 250px;gap:20px}.board-panel{padding:20px 18px 14px}.board{max-width:480px;margin:0 auto;gap:4px;padding:6px}.board-coordinate-top{max-width:480px;margin:0 auto;padding:11px 0 7px}.sector-condition{margin-top:14px;padding:9px 0 11px}.board-message{min-height:41px;font-size:9px}.board-controls{padding-top:12px}.board-footnote{margin-top:11px;font-size:7px}.cell{font-size:19px}.save-status{font-size:9px;margin-right:8px}.header-actions{gap:6px}.header-nav{gap:25px}.nav-item{font-size:12px}.depth-display>span:first-child{font-size:48px}.route-panel{padding-top:18px;padding-bottom:18px}.route-item{padding-bottom:18px}.route-end{padding-top:14px;margin-top:14px}.journal{margin-top:20px}.expedition-panel{padding-top:20px;padding-bottom:18px}.page-footer{padding-top:18px}}
+@media(min-width:1021px) and (max-width:1170px){.game-layout{grid-template-columns:210px minmax(0,1fr) 220px;gap:16px}.site-header{gap:30px}.save-status{display:none}.board-panel{padding-inline:14px}.tool-desc{font-size:8px}.board-message{font-size:8px}.mode-button{font-size:9px;padding:7px 8px}.board-footnote{font-size:6.5px}}
+.arsenal-link{background:transparent;border:0;padding:0;display:flex;align-items:center;gap:5px;color:var(--accent);font-size:9px;letter-spacing:0;font-weight:500}.arsenal-link .icon{height:11px;width:11px}.arsenal-link:hover{text-decoration:underline}
+
+</style>
+</head>
+<body>
+<svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <symbol id="i-mark" viewBox="0 0 24 24"><path d="m12 2 9 10-9 10L3 12Z"/><path d="M9 16V8l7 3-7 3"/></symbol>
+  <symbol id="i-flag" viewBox="0 0 24 24"><path d="M6 21V3m0 1c4-4 8 4 13 0v10c-5 4-9-4-13 0"/></symbol>
+  <symbol id="i-mine" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 2v4m0 12v4M2 12h4m12 0h4M5 5l3 3m8 8 3 3M5 19l3-3m8-8 3-3"/><path d="M10 10h.01" stroke-width="3"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6Z"/><path d="m8 12 3 3 5-6"/></symbol>
+  <symbol id="i-energy" viewBox="0 0 24 24"><path d="m13 2-9 12h7l-1 8 10-12h-7Z"/></symbol>
+  <symbol id="i-coin" viewBox="0 0 24 24"><path d="m12 2 8.6 5v10L12 22l-8.6-5V7Z"/><path d="m12 7 4 2.5v5L12 17l-4-2.5v-5Z"/></symbol>
+  <symbol id="i-probe" viewBox="0 0 24 24"><path d="M12 3v3m0 12v3M3 12h3m12 0h3"/><circle cx="12" cy="12" r="6"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-radar" viewBox="0 0 24 24"><path d="M20.7 7A10 10 0 1 1 12 2v10l7-7"/><path d="M16.8 8.4A6 6 0 1 1 12 6"/><circle cx="8" cy="15" r="1"/></symbol>
+  <symbol id="i-emp" viewBox="0 0 24 24"><path d="m12 2 2 7 8 3-8 3-2 7-2-7-8-3 8-3Z"/><path d="m19 3 2 2M3 19l2 2"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v16m-6-6 6 6 6-6"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><path d="m3 3 6 18 3-9 9-3Z"/></symbol>
+  <symbol id="i-volume" viewBox="0 0 24 24"><path d="m11 5-6 4H2v6h3l6 4Zm4 3a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/></symbol>
+  <symbol id="i-mute" viewBox="0 0 24 24"><path d="m11 5-6 4H2v6h3l6 4Zm5 4 6 6m0-6-6 6"/></symbol>
+  <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 2-3 4m.1 3h.01"/></symbol>
+  <symbol id="i-reset" viewBox="0 0 24 24"><path d="M3 10a9 9 0 1 1 2 8M3 3v7h7"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5Zm-9 5v10l9 4 9-4V8M12 13v9m-5-17 10 6"/></symbol>
+  <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M8 3h8v6a4 4 0 0 1-8 0Zm0 2H3v3c0 3 3 4 5 4m8-7h5v3c0 3-3 4-5 4m-4 1v6m-5 2h10"/></symbol>
+  <symbol id="i-mountain" viewBox="0 0 24 24"><path d="m2 20 7-13 4 7 3-5 6 11ZM7 11l2 2 2-2"/></symbol>
+  <symbol id="i-map" viewBox="0 0 24 24"><path d="m3 5 6-3 6 3 6-3v17l-6 3-6-3-6 3Zm6-3v17m6-14v17"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5ZM20 2v4m-2-2h4"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 5v2"/></symbol>
+  <symbol id="i-save" viewBox="0 0 24 24"><path d="m20 7-9 9-5-5"/></symbol>
+  <symbol id="i-helmet" viewBox="0 0 24 24"><path d="M4 14v-4a8 8 0 0 1 16 0v4m-16 0v5l8 3 8-3v-5Z"/><rect x="6" y="7" width="12" height="7" rx="3"/><path d="M9 17h6"/></symbol>
+</svg>
+
+<div class="ambient" aria-hidden="true"></div>
+<header class="site-header">
+  <a class="brand" href="#" aria-label="Сапёр: Экспедиция, главная"><span class="brand-symbol"><svg class="icon"><use href="#i-mark"/></svg></span><span class="brand-name">САПЁР<span>ЭКСПЕДИЦИЯ</span></span></a>
+  <nav class="header-nav" aria-label="Основное меню"><button class="nav-item active" data-action="play">Экспедиция <span class="nav-dot"></span></button><button class="nav-item" data-action="arsenal">Снаряжение</button><button class="nav-item" data-action="help">Как играть <span class="key-hint">?</span></button></nav>
+  <div class="header-actions"><span class="save-status" id="saveStatus"><span></span>Прогресс сохранён</span><button class="icon-button" id="soundButton" data-action="sound" aria-label="Включить звук" title="Включить звук"><svg class="icon"><use href="#i-mute"/></svg></button><button class="icon-button mobile-help" data-action="help" aria-label="Как играть"><svg class="icon"><use href="#i-help"/></svg></button><button class="icon-button" data-action="restart" aria-label="Новая экспедиция" title="Новая экспедиция"><svg class="icon"><use href="#i-reset"/></svg></button></div>
+</header>
+
+<main class="page-shell">
+  <section class="intro" aria-labelledby="gameTitle"><div><div class="eyebrow"><span class="live-dot"></span> ЗА ПРЕДЕЛАМИ ИЗВЕСТНОГО</div><h1 id="gameTitle">Ещё один сектор<span>.</span></h1><p>Каждый ход — открытие. Каждая глубина — новый риск.</p></div><div class="best-score"><span class="best-icon"><svg class="icon"><use href="#i-trophy"/></svg></span><div><span class="label">ЛИЧНЫЙ РЕКОРД</span><strong id="bestScore">0 <small>очков</small></strong></div></div></section>
+
+  <div class="game-layout">
+    <aside class="left-column" aria-label="Статус экспедиции">
+      <section class="panel expedition-panel">
+        <div class="panel-kicker">ЭКСПЕДИЦИЯ <span class="online-chip">В СЕТИ</span></div>
+        <div class="depth-display"><span id="depthValue">100</span><span class="depth-unit">м<span>ГЛУБИНА</span></span><svg class="icon depth-arrow"><use href="#i-down"/></svg></div>
+        <div class="depth-art" aria-hidden="true"><svg viewBox="0 0 260 94" preserveAspectRatio="none"><path d="M-20 19 12 31 40 8 67 45 104 19 139 46 165 26 198 52 230 20 280 44"/><path d="M-20 41 19 52 42 33 70 66 109 40 142 65 173 48 204 71 242 43 280 67"/><path d="M-20 63 21 74 48 59 76 86 113 64 145 87 179 70 207 91 247 68 280 87"/><path class="terrain-fill" d="M-20 19 12 31 40 8 67 45 104 19 139 46 165 26 198 52 230 20 280 44V110H-20Z"/></svg><span class="depth-marker"></span><span class="art-coord">↓ В НЕИЗВЕСТНОСТЬ</span></div>
+        <div class="resource-row health-row"><div><svg class="icon"><use href="#i-heart"/></svg><span>Здоровье</span></div><div id="hearts" class="hearts" aria-label="3 из 3"></div></div>
+        <div class="resource-row"><div><svg class="icon shield-color"><use href="#i-shield"/></svg><span>Щит</span></div><strong id="shieldValue" class="shield-color">1 <small>/ 3</small></strong></div>
+        <div class="resource-row"><div><svg class="icon energy-color"><use href="#i-energy"/></svg><span>Энергия</span></div><strong id="energyValue">6 <small>/ 8</small></strong></div>
+        <div class="energy-bar" id="energyBar" aria-label="Запас энергии"></div>
+        <div class="resource-bottom"><div><span class="label">КРЕДИТЫ</span><strong><svg class="icon coin-color"><use href="#i-coin"/></svg><span id="coinValue">0</span></strong></div><span class="resource-divider"></span><div><span class="label">ОЧКИ</span><strong id="scoreValue">0</strong></div></div>
+      </section>
+
+      <section class="panel route-panel"><div class="panel-kicker">МАРШРУТ <svg class="icon"><use href="#i-map"/></svg></div><div class="route-list" id="routeList"></div><div class="route-end"><span>∞</span> Глубже. Всегда есть глубже.</div></section>
+      <button class="field-guide" data-action="help"><span class="guide-icon"><svg class="icon"><use href="#i-help"/></svg></span><span><strong>Первый раз в экспедиции?</strong><small>Короткий полевой справочник</small></span><svg class="icon"><use href="#i-arrow"/></svg></button>
+    </aside>
+
+    <section class="board-panel panel" id="boardPanel" aria-label="Игровое поле">
+      <div class="board-heading"><div class="sector-heading"><span class="sector-number" id="sectorNumber">01</span><div><span class="label">ТЕКУЩИЙ СЕКТОР</span><h2 id="biomeName">Зелёный пояс</h2></div></div><div class="mines-count" title="Мины, ещё не отмеченные флагами"><svg class="icon"><use href="#i-mine"/></svg><strong id="mineValue">12</strong><span>мин</span></div></div>
+      <div class="sector-condition" id="condition"><span class="live-dot"></span><span id="conditionText">Тихий сектор</span><span class="condition-description" id="conditionShort">Можно не спешить</span></div>
+      <div class="board-coordinate-top" aria-hidden="true"><span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span><span>I</span><span>J</span></div>
+      <div class="board-wrap" id="boardWrap"><div class="board" id="board" role="grid" aria-label="Минное поле 10 на 10. Стрелки перемещают фокус, Enter открывает, F ставит флаг."></div><div class="board-particles" id="particles" aria-hidden="true"></div></div>
+      <div class="board-message" id="boardMessage"><svg class="icon"><use href="#i-shield"/></svg><span>Начни с любой клетки. Первый ход безопасен.</span></div>
+      <div class="board-controls"><div class="mode-switch" role="group" aria-label="Действие при нажатии"><button id="modeOpen" class="mode-button active" data-action="mode-open" aria-pressed="true"><svg class="icon"><use href="#i-target"/></svg>Открыть</button><button id="modeFlag" class="mode-button" data-action="mode-flag" aria-pressed="false"><svg class="icon"><use href="#i-flag"/></svg>Флаг <kbd>F</kbd></button></div><div class="combo-display" id="comboDisplay"><span class="combo-dots">•••</span><span>Серия</span><strong id="comboValue">×1.00</strong></div></div>
+      <div class="board-footnote"><span><span class="mouse-dot"></span> ЛКМ — открыть</span><span><svg class="icon"><use href="#i-flag"/></svg> ПКМ — флаг</span><span>Нажми на цифру — открыть соседей</span></div>
+    </section>
+
+    <aside class="right-column" aria-label="Снаряжение и цель">
+      <section class="panel equipment-panel"><div class="panel-kicker">СНАРЯЖЕНИЕ <button class="arsenal-link" data-action="arsenal" aria-label="Посмотреть постоянные улучшения">Обзор <svg class="icon"><use href="#i-arrow"/></svg></button></div><p class="equipment-intro">Немного удачи. Немного технологий.</p>
+        <button class="tool-card probe-tool" data-action="probe" id="probeTool"><span class="tool-icon"><svg class="icon"><use href="#i-probe"/></svg></span><span class="tool-copy"><span class="tool-title">Зонд <kbd>1</kbd></span><span class="tool-desc">Откроет безопасную клетку</span><span class="tool-cost free" id="probeCost">1 БЕСПЛАТНО</span></span></button>
+        <button class="tool-card" data-action="sonar" id="sonarTool"><span class="tool-icon"><svg class="icon"><use href="#i-radar"/></svg></span><span class="tool-copy"><span class="tool-title">Сонар <kbd>2</kbd></span><span class="tool-desc">Покажет мины в зоне 3 × 3</span><span class="tool-cost" id="sonarCost"><svg class="icon"><use href="#i-energy"/></svg>3 ЭНЕРГИИ</span></span></button>
+        <button class="tool-card" data-action="emp" id="empTool"><span class="tool-icon"><svg class="icon"><use href="#i-emp"/></svg></span><span class="tool-copy"><span class="tool-title">Импульс <kbd>3</kbd></span><span class="tool-desc">Обезвредит мины в зоне 3 × 3</span><span class="tool-cost" id="empCost"><svg class="icon"><use href="#i-energy"/></svg>5 ЭНЕРГИИ</span></span></button>
+        <div class="regen-note"><svg class="icon"><use href="#i-energy"/></svg><span id="regenNote">+1 энергия за 12 открытых клеток</span></div>
+      </section>
+      <section class="panel goal-panel" id="goalPanel"><div class="panel-kicker">ПУТЬ ДАЛЬШЕ <svg class="icon"><use href="#i-arrow"/></svg></div><div class="goal-progress"><strong id="goalPercent">0<span>%</span></strong><span>сектора<br>исследовано</span><div class="goal-ring" id="goalRing"><svg class="icon"><use href="#i-flag"/></svg></div></div><div class="progress-track"><div id="goalBar"></div><span id="goalMarker" style="left:70%"></span></div><p id="goalText">Открой 70% безопасных клеток, чтобы перейти в следующий сектор.</p><button class="primary-button" id="extractButton" data-action="extract" disabled><svg class="icon"><use href="#i-lock"/></svg><span>Путь ещё закрыт</span></button><div class="full-clear-hint"><svg class="icon"><use href="#i-spark"/></svg><span>Полная зачистка — больше наград</span></div></section>
+    </aside>
+  </div>
+
+  <section class="journal" aria-label="Журнал экспедиции"><div class="journal-label"><span class="live-dot"></span> ЖУРНАЛ</div><div id="journalEntries" class="journal-entries"><span>Связь установлена. Поле ждёт первого хода.</span></div><span class="journal-status">ЛОКАЛЬНОЕ СОХРАНЕНИЕ</span></section>
+  <footer class="page-footer"><span>СПУСК БЕЗ КОНЦА <span class="footer-cross">+</span> САПЁР: ЭКСПЕДИЦИЯ</span><span>Без таймера. В своём ритме. <span class="footer-infinity">∞</span></span></footer>
+</main>
+
+<div id="toastRegion" class="toast-region" role="status" aria-live="polite" aria-atomic="true"></div>
+<dialog id="modal" aria-labelledby="modalTitle"><div id="modalContent"></div></dialog>
+<noscript><div class="noscript">Для игры нужен JavaScript. Включи его в настройках браузера.</div></noscript>
+<script>
+(function (root) {
+  'use strict';
+
+  const SIZE = 10;
+  const COUNT = SIZE * SIZE;
+  const VERSION = 1;
+  const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
+  const copy = (value) => JSON.parse(JSON.stringify(value));
+  const integer = (value, min = 0, max = Number.MAX_SAFE_INTEGER) => Number.isSafeInteger(value) && value >= min && value <= max;
+  const BIOMES = [
+    { id: 'verdant', name: 'Зелёный рубеж', subtitle: 'Забытые шахты под живым лесом', color: '#b5f36b' },
+    { id: 'frost', name: 'Ледяной разлом', subtitle: 'Тишина под вечной мерзлотой', color: '#77dbf5' },
+    { id: 'crystal', name: 'Кристальные пещеры', subtitle: 'Здесь даже камни хранят энергию', color: '#be9cf7' },
+    { id: 'magma', name: 'Огненное ядро', subtitle: 'На границе с сердцем планеты', color: '#ffa970' }
+  ];
+  const UPGRADES = {
+    medkit: { id: 'medkit', name: 'Полевая медицина', description: 'Восстанавливает 2 здоровья.', icon: 'heart', rarity: 'common' },
+    shield: { id: 'shield', name: 'Бронепластина', description: '+1 щит. Полностью поглощает один взрыв.', icon: 'shield', rarity: 'common' },
+    battery: { id: 'battery', name: 'Ёмкая батарея', description: '+1 к запасу энергии и +3 энергии сейчас. Максимум 14.', icon: 'battery', rarity: 'rare' },
+    recycler: { id: 'recycler', name: 'Рекуператор', description: 'Энергия за каждые 2 клетки быстрее. Предел: 1 за 6 клеток.', icon: 'refresh', rarity: 'rare' },
+    cartographer: { id: 'cartographer', name: 'Картограф', description: '+1 бесплатный зонд в каждом секторе. Максимум 3.', icon: 'radar', rarity: 'rare' },
+    hull: { id: 'hull', name: 'Усиленный корпус', description: '+1 к максимуму здоровья и +1 здоровье. Максимум 6.', icon: 'heart', rarity: 'rare' },
+    fortune: { id: 'fortune', name: 'Протокол открытия', description: 'На 10% больше очков за клетки. Максимум +50%.', icon: 'sparkles', rarity: 'rare' },
+    rescue: { id: 'rescue', name: 'Страховочный трос', description: 'Один раз спасает от гибели, оставляя 1 здоровье.', icon: 'anchor', rarity: 'epic' },
+    energy: { id: 'energy', name: 'Энергоячейка', description: 'Полностью восстанавливает энергию.', icon: 'bolt', rarity: 'common' },
+    salvage: { id: 'salvage', name: 'Тайник разведчика', description: '+18 монет для закупки снаряжения.', icon: 'coin', rarity: 'common' },
+    research: { id: 'research', name: 'Архив экспедиции', description: '+500 очков за каждый текущий сектор.', icon: 'map', rarity: 'common' },
+    treasure: { id: 'treasure', name: 'Редкий минерал', description: '+12 монет и +250 очков.', icon: 'gem', rarity: 'common' }
+  };
+  const SHOP = {
+    medkit: { id: 'medkit', name: 'Аптечка', description: '+1 здоровье', cost: 14, icon: 'heart' },
+    battery: { id: 'battery', name: 'Энергоячейка', description: '+3 энергии', cost: 9, icon: 'bolt' },
+    shield: { id: 'shield', name: 'Щит', description: '+1 щит', cost: 12, icon: 'shield' }
+  };
+
+  function neighbors(index, radius = 1, includeCenter = false) {
+    const x = index % SIZE;
+    const y = Math.floor(index / SIZE);
+    const cells = [];
+    for (let yy = Math.max(0, y - radius); yy <= Math.min(SIZE - 1, y + radius); yy++) {
+      for (let xx = Math.max(0, x - radius); xx <= Math.min(SIZE - 1, x + radius); xx++) {
+        const i = yy * SIZE + xx;
+        if (includeCenter || i !== index) cells.push(i);
+      }
+    }
+    return cells;
+  }
+
+  function blankCell() {
+    return { mine: false, n: 0, revealed: false, flagged: false, scanned: false, exploded: false, neutralized: false, loot: null };
+  }
+
+  function initialSeed() {
+    try {
+      const value = new Uint32Array(1);
+      if (root.crypto && root.crypto.getRandomValues) {
+        root.crypto.getRandomValues(value);
+        return value[0] || 1;
+      }
+    } catch (_) { /* A non-cryptographic seed is sufficient for a local game. */ }
+    return ((Date.now() ^ Math.floor(Math.random() * 0xffffffff)) >>> 0) || 1;
+  }
+
+  function anomalyFor(sector) {
+    if (sector <= 2) return { id: 'quiet', name: 'Спокойный сектор', description: 'Обычный урон. Первый ход и соседние клетки безопасны.' };
+    if (sector % 5 === 0) return { id: 'elite', name: 'Узел аномалии', description: '+2 мины, выход после 75% зачистки. Награда сектора +25%.' };
+    const phase = sector % 6;
+    if (phase === 3) return { id: 'ion', name: 'Ионная буря', description: 'Сонар и ЭМИ стоят на 1 энергию больше.' };
+    if (phase === 4) return { id: 'cache', name: 'Заброшенный склад', description: 'Монеты в тайниках приносят двойную добычу.' };
+    if (phase === 1 && sector >= 7) return { id: 'fault', name: 'Острые осколки', description: 'Каждый взрыв наносит 2 урона. Щит поглощает весь удар.' };
+    if (phase === 2) return { id: 'blackout', name: 'Обесточенный узел', description: 'Для восстановления 1 энергии нужно открыть на 4 клетки больше.' };
+    return { id: 'quiet', name: 'Спокойный сектор', description: 'Обычный урон. Первый ход и соседние клетки безопасны.' };
+  }
+
+  function plannedMines(sector) {
+    const extra = anomalyFor(sector).id === 'elite' ? 2 : 0;
+    return Math.min(28, Math.min(26, 12 + Math.floor((sector - 1) / 2)) + extra);
+  }
+
+  function sectorReward(sector, fullClear) {
+    let coins = 12 + Math.min(20, Math.floor(sector * 1.5)) + (fullClear ? 8 : 0);
+    let score = 100 * sector + (fullClear ? 200 : 0);
+    if (anomalyFor(sector).id === 'elite') { coins = Math.round(coins * 1.25); score = Math.round(score * 1.25); }
+    return { sector, coins, score, fullClear };
+  }
+
+  function permanentAvailable(s, id) {
+    if (id === 'battery') return s.maxEnergy < 14;
+    if (id === 'recycler') return s.upgrades.recycler < 3;
+    if (id === 'cartographer') return s.upgrades.cartographer < 2;
+    if (id === 'hull') return s.maxHp < 6;
+    if (id === 'fortune') return s.upgrades.fortune < 5;
+    if (id === 'rescue') return s.rescueTokens < 1;
+    return true;
+  }
+
+  function validateSaved(saved) {
+    try {
+      const s = typeof saved === 'string' ? JSON.parse(saved) : copy(saved);
+      if (!s || s.version !== VERSION || !integer(s.sector, 1) || !['playing', 'camp', 'over'].includes(s.status)) return null;
+      if (!integer(s.seed, 1, 0xffffffff) || !integer(s.rngState, 0, 0xffffffff) || typeof s.generated !== 'boolean') return null;
+      if (!Array.isArray(s.cells) || s.cells.length !== COUNT || !Array.isArray(s.offers)) return null;
+      if (!s.upgrades || typeof s.upgrades !== 'object' || Array.isArray(s.upgrades)) return null;
+      for (const key of ['hp', 'maxHp', 'shields', 'maxShields', 'energy', 'maxEnergy', 'coins', 'score', 'combo', 'freeProbes', 'revealedSafe', 'safeTotal', 'target', 'mineCount', 'totalOpened', 'sectorsCleared', 'energyProgress', 'coinProgress', 'rescueTokens', 'totalMinesDefused']) {
+        if (!integer(s[key])) return null;
+      }
+      if (s.maxHp < 3 || s.maxHp > 6 || s.hp > s.maxHp || s.maxShields !== 3 || s.shields > s.maxShields || s.maxEnergy < 8 || s.maxEnergy > 14 || s.energy > s.maxEnergy || s.rescueTokens > 1 || s.freeProbes > 3) return null;
+      if ((s.status === 'over') !== (s.hp === 0)) return null;
+      if (s.safeTotal > COUNT || s.revealedSafe > s.safeTotal || s.target > s.safeTotal || s.mineCount > 28 || s.energyProgress > 15 || s.coinProgress >= 20) return null;
+      for (const [key, limit] of Object.entries({ recycler: 3, cartographer: 2, fortune: 5 })) {
+        if (!integer(s.upgrades[key], 0, limit)) return null;
+      }
+      for (const cell of s.cells) {
+        if (!cell || typeof cell !== 'object' || !integer(cell.n, 0, 8)) return null;
+        for (const key of ['mine', 'revealed', 'flagged', 'scanned', 'exploded', 'neutralized']) if (typeof cell[key] !== 'boolean') return null;
+        if (![null, 'coin', 'battery', 'shield'].includes(cell.loot) || (cell.revealed && cell.flagged) || (cell.exploded && (!cell.mine || !cell.revealed)) || (cell.neutralized && cell.mine)) return null;
+      }
+      if (s.offers.some(id => !Object.hasOwn(UPGRADES, id)) || new Set(s.offers).size !== s.offers.length) return null;
+      if (s.status === 'camp' && (s.offers.length !== 3 || !s.generated || s.revealedSafe < s.target)) return null;
+      if (s.status !== 'camp' && s.offers.length) return null;
+      // Purchases can fill a consumable after it was offered, but cannot make
+      // permanent upgrades eligible beyond their advertised level caps.
+      if (s.offers.some(id => !permanentAvailable(s, id))) return null;
+      const reward = s.lastSectorReward;
+      if (reward !== null) {
+        if (!reward || typeof reward !== 'object' || Array.isArray(reward) || !integer(reward.sector, 1, s.sector) || !integer(reward.coins) || !integer(reward.score) || typeof reward.fullClear !== 'boolean') return null;
+        const expected = sectorReward(reward.sector, reward.fullClear);
+        if (reward.coins !== expected.coins || reward.score !== expected.score) return null;
+      }
+      if (s.status === 'camp' && (!reward || reward.sector !== s.sector || reward.fullClear !== (s.revealedSafe === s.safeTotal))) return null;
+      if (s.generated) {
+        if (s.cells.filter(c => c.mine).length !== s.mineCount || s.safeTotal !== COUNT - s.mineCount || s.cells.filter(c => c.revealed && !c.mine).length !== s.revealedSafe) return null;
+        for (let i = 0; i < COUNT; i++) if (s.cells[i].n !== neighbors(i).filter(j => s.cells[j].mine).length) return null;
+      } else if (s.cells.some(c => c.mine || c.revealed || c.scanned || c.exploded || c.neutralized || c.loot !== null || c.n) || s.revealedSafe !== 0 || s.mineCount !== plannedMines(s.sector) || s.safeTotal !== COUNT - s.mineCount) return null;
+      return s;
+    } catch (_) { return null; }
+  }
+
+  class ExpeditionEngine {
+    constructor(savedState = null) {
+      const restored = savedState == null ? null : validateSaved(savedState);
+      this.loaded = !!restored;
+      if (restored) { this.state = restored; return; }
+      const seed = initialSeed();
+      this.state = {
+        version: VERSION, sector: 1, status: 'playing', seed, rngState: seed, cells: [], generated: false,
+        hp: 3, maxHp: 3, shields: 1, maxShields: 3, energy: 6, maxEnergy: 8, coins: 0, score: 0, combo: 0,
+        freeProbes: 1, upgrades: { recycler: 0, cartographer: 0, fortune: 0 },
+        revealedSafe: 0, safeTotal: 88, target: 62, mineCount: 12, offers: [], totalOpened: 0, sectorsCleared: 0,
+        energyProgress: 0, coinProgress: 0, rescueTokens: 0, totalMinesDefused: 0, lastSectorReward: null
+      };
+      this._newBoard();
+    }
+
+    _random() {
+      this.state.rngState = (this.state.rngState + 0x6D2B79F5) >>> 0;
+      let t = this.state.rngState;
+      t = Math.imul(t ^ (t >>> 15), t | 1);
+      t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    }
+
+    _shuffle(values) {
+      for (let i = values.length - 1; i > 0; i--) {
+        const j = Math.floor(this._random() * (i + 1));
+        [values[i], values[j]] = [values[j], values[i]];
+      }
+      return values;
+    }
+
+    _newBoard() {
+      const s = this.state;
+      s.cells = Array.from({ length: COUNT }, blankCell);
+      s.generated = false;
+      s.mineCount = plannedMines(s.sector);
+      s.safeTotal = COUNT - s.mineCount;
+      s.target = Math.ceil(s.safeTotal * (anomalyFor(s.sector).id === 'elite' ? 0.75 : 0.7));
+      s.revealedSafe = 0;
+      s.freeProbes = 1 + s.upgrades.cartographer;
+      s.offers = [];
+      s.status = 'playing';
+      // Recalibration at a new sector keeps an old anomaly's remainder valid.
+      s.energyProgress %= this.getInfo().energyEvery;
+    }
+
+    _generate(first) {
+      const s = this.state;
+      const protectedCells = new Set(neighbors(first, 1, true));
+      const candidates = this._shuffle(Array.from({ length: COUNT }, (_, i) => i).filter(i => !protectedCells.has(i)));
+      for (const index of candidates.slice(0, s.mineCount)) s.cells[index].mine = true;
+      this._recount();
+      const lootCandidates = this._shuffle(Array.from({ length: COUNT }, (_, i) => i).filter(i => !s.cells[i].mine && !protectedCells.has(i)));
+      const lootTypes = ['coin', 'coin', 'battery', 'shield'];
+      lootCandidates.slice(0, lootTypes.length).forEach((index, j) => { s.cells[index].loot = lootTypes[j]; });
+      s.generated = true;
+    }
+
+    _recount() {
+      const s = this.state;
+      for (let i = 0; i < COUNT; i++) s.cells[i].n = neighbors(i).reduce((n, j) => n + Number(s.cells[j].mine), 0);
+      s.mineCount = s.cells.filter(c => c.mine).length;
+      s.safeTotal = COUNT - s.mineCount;
+    }
+
+    _result(ok, reason, events = [], opened = []) {
+      const result = { ok, events, opened };
+      if (reason) result.reason = reason;
+      return result;
+    }
+
+    _ready(index) {
+      if (this.state.status !== 'playing') return 'Сначала завершите выбор награды или начните новую экспедицию.';
+      if (index !== undefined && !integer(index, 0, COUNT - 1)) return 'Выберите клетку на поле.';
+      return null;
+    }
+
+    _energy(amount, events) {
+      const before = this.state.energy;
+      this.state.energy = Math.min(this.state.maxEnergy, this.state.energy + amount);
+      if (this.state.energy > before) events.push({ type: 'energy', amount: this.state.energy - before });
+    }
+
+    _loot(index, events) {
+      const s = this.state;
+      const type = s.cells[index].loot;
+      if (!type) return;
+      let amount = 0;
+      if (type === 'coin') {
+        amount = this.getInfo().anomaly.id === 'cache' ? 10 : 5;
+        s.coins += amount;
+      } else if (type === 'battery') {
+        amount = Math.min(2, s.maxEnergy - s.energy);
+        this._energy(2, events);
+      } else if (type === 'shield') {
+        if (s.shields < s.maxShields) { s.shields++; amount = 1; }
+        else { s.coins += 5; amount = 5; }
+      }
+      events.push({ type: 'loot', loot: type, amount, index, message: type === 'coin' ? `Тайник: +${amount} монет` : type === 'battery' ? 'Найдена энергоячейка' : amount === 5 ? 'Запасной щит: +5 монет' : 'Найден щит' });
+    }
+
+    _hit(index, events) {
+      const s = this.state;
+      const cell = s.cells[index];
+      cell.revealed = true;
+      cell.flagged = false;
+      cell.exploded = true;
+      s.combo = 0;
+      if (s.shields > 0) {
+        s.shields--;
+        events.push({ type: 'shield', index, message: 'Щит поглотил взрыв' });
+      } else {
+        const damage = this.getInfo().damage;
+        s.hp = Math.max(0, s.hp - damage);
+        events.push({ type: 'mine', index, damage, message: `Мина! −${damage} здоровья` });
+        if (!s.hp) {
+          if (s.rescueTokens) {
+            s.rescueTokens--;
+            s.hp = 1;
+            events.push({ type: 'rescue', message: 'Страховочный трос спас экспедицию' });
+          } else {
+            s.status = 'over';
+            events.push({ type: 'gameover', message: 'Экспедиция завершена' });
+          }
+        }
+      }
+    }
+
+    _reveal(indices, events, opened) {
+      const s = this.state;
+      const queue = [...indices];
+      const queued = new Set(queue);
+      const points = Math.round((10 + s.sector) * this.getInfo().multiplier * (1 + s.upgrades.fortune * 0.1));
+      let hit = false;
+      for (let cursor = 0; cursor < queue.length && s.status === 'playing'; cursor++) {
+        const index = queue[cursor];
+        const cell = s.cells[index];
+        if (cell.revealed || cell.flagged) continue;
+        if (cell.mine) { this._hit(index, events); hit = true; opened.push(index); continue; }
+        cell.revealed = true;
+        s.revealedSafe++;
+        s.totalOpened++;
+        s.score += points;
+        s.energyProgress++;
+        s.coinProgress++;
+        opened.push(index);
+        const every = this.getInfo().energyEvery;
+        while (s.energyProgress >= every) { s.energyProgress -= every; this._energy(1, events); }
+        while (s.coinProgress >= 20) { s.coinProgress -= 20; s.coins += 2; events.push({ type: 'coins', amount: 2 }); }
+        this._loot(index, events);
+        if (cell.n === 0) {
+          for (const j of neighbors(index)) {
+            if (!queued.has(j) && !s.cells[j].revealed && !s.cells[j].flagged) { queued.add(j); queue.push(j); }
+          }
+        }
+      }
+      return hit;
+    }
+
+    _finishAction(events, opened, wasReady, wasFull, hit, countCombo = true) {
+      const s = this.state;
+      if (countCombo && !hit && s.status === 'playing') s.combo++;
+      const info = this.getInfo();
+      if (!wasReady && info.canExtract) events.push({ type: 'extract-ready', message: 'Путь дальше открыт. Можно перейти в следующий сектор.' });
+      if (!wasFull && info.fullClear) events.push({ type: 'cleared', message: 'Сектор полностью зачищен! Дополнительная награда ждёт в лагере.' });
+      return this._result(true, null, events, opened);
+    }
+
+    open(index) {
+      const error = this._ready(index);
+      if (error) return this._result(false, error);
+      const s = this.state;
+      const cell = s.cells[index];
+      if (cell.flagged) return this._result(false, 'Сначала снимите флаг.');
+      let targets = [index];
+      if (cell.revealed) {
+        if (cell.mine || !cell.n) return this._result(false, 'Эта клетка уже открыта.');
+        const around = neighbors(index);
+        const marked = around.filter(i => s.cells[i].flagged || (s.cells[i].mine && s.cells[i].revealed)).length;
+        if (marked !== cell.n) return this._result(false, 'Для быстрого открытия число флагов вокруг должно совпадать с цифрой.');
+        targets = around.filter(i => !s.cells[i].revealed && !s.cells[i].flagged);
+        if (!targets.length) return this._result(false, 'Все соседние клетки уже разобраны.');
+      }
+      const before = this.getInfo();
+      if (!s.generated) this._generate(index);
+      const events = [];
+      const opened = [];
+      const hit = this._reveal(targets, events, opened);
+      return this._finishAction(events, opened, before.canExtract, before.fullClear, hit);
+    }
+
+    flag(index) {
+      const error = this._ready(index);
+      if (error) return this._result(false, error);
+      const s = this.state;
+      const cell = s.cells[index];
+      if (cell.revealed) return this._result(false, 'На открытой клетке флаг не нужен.');
+      if (!cell.flagged && s.cells.filter(c => c.flagged).length >= s.mineCount - s.cells.filter(c => c.exploded).length) return this._result(false, 'Все оставшиеся мины уже отмечены. Снимите лишний флаг.');
+      cell.flagged = !cell.flagged;
+      return this._result(true, null, [{ type: 'flag', index, flagged: cell.flagged }]);
+    }
+
+    probe() {
+      const error = this._ready();
+      if (error) return this._result(false, error);
+      const s = this.state;
+      const before = this.getInfo();
+      if (s.energy < before.probeCost) return this._result(false, `Нужно ${before.probeCost} энергии для зонда.`);
+      let candidates = s.cells.map((c, i) => ({ c, i })).filter(({ c }) => !c.revealed && !c.flagged && (!s.generated || !c.mine)).map(({ i }) => i);
+      if (!candidates.length) return this._result(false, 'Нет доступных безопасных клеток. Проверьте свои флаги.');
+      let index;
+      if (!s.generated) {
+        index = candidates.includes(44) ? 44 : candidates[0];
+        this._generate(index);
+      } else {
+        const edge = candidates.filter(i => neighbors(i).some(j => s.cells[j].revealed));
+        if (edge.length) candidates = edge;
+        index = candidates[Math.floor(this._random() * candidates.length)];
+      }
+      if (s.freeProbes) s.freeProbes--;
+      else s.energy -= before.probeCost;
+      const events = [{ type: 'probe', index, message: 'Зонд нашёл безопасную клетку' }];
+      const opened = [];
+      this._reveal([index], events, opened);
+      return this._finishAction(events, opened, before.canExtract, before.fullClear, false);
+    }
+
+    sonar(index) {
+      const error = this._ready(index);
+      if (error) return this._result(false, error);
+      const s = this.state;
+      if (!s.generated) return this._result(false, 'Сначала откройте первую клетку.');
+      const before = this.getInfo();
+      if (s.energy < before.sonarCost) return this._result(false, `Сонару нужно ${before.sonarCost} энергии.`);
+      const targets = neighbors(index, 1, true).filter(i => !s.cells[i].revealed && !s.cells[i].scanned);
+      if (!targets.length) return this._result(false, 'В этой области всё уже исследовано.');
+      s.energy -= before.sonarCost;
+      for (const i of targets) s.cells[i].scanned = true;
+      const mines = targets.filter(i => s.cells[i].mine).length;
+      return this._finishAction([{ type: 'scan', index, indices: targets, mines, message: `Область просканирована. Найдено мин: ${mines}` }], [], before.canExtract, before.fullClear, false);
+    }
+
+    emp(index) {
+      const error = this._ready(index);
+      if (error) return this._result(false, error);
+      const s = this.state;
+      if (!s.generated) return this._result(false, 'Сначала откройте первую клетку.');
+      const before = this.getInfo();
+      if (s.energy < before.empCost) return this._result(false, `ЭМИ нужно ${before.empCost} энергии.`);
+      const targets = neighbors(index, 1, true);
+      if (!targets.some(i => s.cells[i].mine || !s.cells[i].revealed)) return this._result(false, 'В этой области уже нечего обезвреживать.');
+      s.energy -= before.empCost;
+      let defused = 0;
+      for (const i of targets) {
+        const cell = s.cells[i];
+        cell.flagged = false;
+        if (cell.mine) {
+          const alreadyRevealed = cell.revealed;
+          cell.mine = false;
+          cell.exploded = false;
+          cell.neutralized = true;
+          cell.scanned = true;
+          // Previously exploded cells count as safely revealed after defusing,
+          // but must never grant the same opening reward twice.
+          if (alreadyRevealed) s.revealedSafe++;
+          defused++;
+        }
+      }
+      this._recount();
+      s.totalMinesDefused += defused;
+      const events = [{ type: 'emp', index, defused, message: `ЭМИ: обезврежено мин — ${defused}` }];
+      const opened = [];
+      this._reveal(targets, events, opened);
+      return this._finishAction(events, opened, before.canExtract, before.fullClear, false);
+    }
+
+    _eligibleUpgrades() {
+      const s = this.state;
+      const eligible = ['salvage', 'research', 'treasure'];
+      if (s.hp < s.maxHp) eligible.push('medkit');
+      if (s.shields < s.maxShields) eligible.push('shield');
+      if (s.maxEnergy < 14) eligible.push('battery');
+      if (s.upgrades.recycler < 3) eligible.push('recycler');
+      if (s.upgrades.cartographer < 2) eligible.push('cartographer');
+      if (s.maxHp < 6) eligible.push('hull');
+      if (s.upgrades.fortune < 5) eligible.push('fortune');
+      if (!s.rescueTokens) eligible.push('rescue');
+      if (s.energy < s.maxEnergy) eligible.push('energy');
+      return eligible;
+    }
+
+    extract() {
+      const error = this._ready();
+      if (error) return this._result(false, error);
+      const s = this.state;
+      const info = this.getInfo();
+      if (!info.canExtract) return this._result(false, `Для перехода откройте ещё ${Math.max(0, s.target - s.revealedSafe)} безопасных клеток.`);
+      const reward = sectorReward(s.sector, info.fullClear);
+      const { coins, score } = reward;
+      s.coins += coins;
+      s.score += score;
+      s.sectorsCleared++;
+      s.lastSectorReward = reward;
+      const events = [{ type: 'camp', coins, score, fullClear: info.fullClear, message: 'Привал. Выберите одно улучшение.' }];
+      this._energy(3, events);
+      s.status = 'camp';
+      s.offers = this._shuffle(this._eligibleUpgrades()).slice(0, 3);
+      return this._result(true, null, events);
+    }
+
+    chooseUpgrade(id) {
+      const s = this.state;
+      if (s.status !== 'camp' || !s.offers.includes(id)) return this._result(false, 'Выберите одну из предложенных наград.');
+      if (!permanentAvailable(s, id)) return this._result(false, 'Это улучшение уже достигло максимума. Выберите другую награду.');
+      // Shop purchases may fill a resource after offers were rolled. Convert
+      // such a now-redundant consumable instead of presenting a dead choice.
+      const events = [];
+      if (id === 'medkit') {
+        if (s.hp === s.maxHp) { s.coins += 14; events.push({ type: 'coins', amount: 14 }); }
+        else s.hp = Math.min(s.maxHp, s.hp + 2);
+      } else if (id === 'shield') {
+        if (s.shields === s.maxShields) { s.coins += 12; events.push({ type: 'coins', amount: 12 }); }
+        else s.shields++;
+      } else if (id === 'battery') { s.maxEnergy = Math.min(14, s.maxEnergy + 1); this._energy(3, events); }
+      else if (id === 'recycler') s.upgrades.recycler = Math.min(3, s.upgrades.recycler + 1);
+      else if (id === 'cartographer') s.upgrades.cartographer = Math.min(2, s.upgrades.cartographer + 1);
+      else if (id === 'hull') { s.maxHp = Math.min(6, s.maxHp + 1); s.hp = Math.min(s.maxHp, s.hp + 1); }
+      else if (id === 'fortune') s.upgrades.fortune = Math.min(5, s.upgrades.fortune + 1);
+      else if (id === 'rescue') s.rescueTokens = 1;
+      else if (id === 'energy') {
+        if (s.energy === s.maxEnergy) { s.coins += 9; events.push({ type: 'coins', amount: 9 }); }
+        else this._energy(s.maxEnergy, events);
+      } else if (id === 'salvage') s.coins += 18;
+      else if (id === 'research') s.score += 500 * s.sector;
+      else if (id === 'treasure') { s.coins += 12; s.score += 250; }
+      events.push({ type: 'upgrade', id, name: UPGRADES[id].name });
+      s.sector++;
+      this._newBoard();
+      events.push({ type: 'sector', sector: s.sector, message: `Сектор ${s.sector}. Первый ход безопасен.` });
+      return this._result(true, null, events);
+    }
+
+    buy(id) {
+      const s = this.state;
+      if (s.status !== 'camp') return this._result(false, 'Снаряжение можно купить на привале.');
+      if (!Object.hasOwn(SHOP, id)) return this._result(false, 'Такого снаряжения нет.');
+      const item = SHOP[id];
+      if (s.coins < item.cost) return this._result(false, 'Не хватает монет.');
+      if ((id === 'medkit' && s.hp === s.maxHp) || (id === 'battery' && s.energy === s.maxEnergy) || (id === 'shield' && s.shields === s.maxShields)) return this._result(false, 'Этот запас уже полон.');
+      s.coins -= item.cost;
+      if (id === 'medkit') s.hp++;
+      else if (id === 'battery') s.energy = Math.min(s.maxEnergy, s.energy + 3);
+      else s.shields++;
+      return this._result(true, null, [{ type: 'buy', id, name: item.name, message: `Куплено: ${item.name}` }]);
+    }
+
+    getInfo() {
+      const s = this.state;
+      const anomaly = anomalyFor(s.sector);
+      const flags = s.cells.filter(c => c.flagged).length;
+      const exploded = s.cells.filter(c => c.exploded).length;
+      const baseEnergyEvery = 12 - s.upgrades.recycler * 2;
+      return {
+        biome: copy(BIOMES[Math.floor((s.sector - 1) / 3) % BIOMES.length]),
+        anomaly, density: s.mineCount / COUNT, initialDensity: plannedMines(s.sector) / COUNT,
+        mines: s.mineCount, flags, remainingMines: s.mineCount - exploded - flags,
+        canExtract: s.status === 'playing' && s.generated && s.revealedSafe >= s.target,
+        progress: s.safeTotal ? clamp(s.revealedSafe / s.safeTotal, 0, 1) : 0,
+        probeCost: s.freeProbes > 0 ? 0 : 2,
+        sonarCost: 3 + Number(anomaly.id === 'ion'), empCost: 5 + Number(anomaly.id === 'ion'),
+        energyEvery: baseEnergyEvery + (anomaly.id === 'blackout' ? 4 : 0),
+        damage: anomaly.id === 'fault' ? 2 : 1,
+        multiplier: Math.min(2.5, 1 + Math.floor(s.combo / 5) * 0.25),
+        fullClear: s.generated && s.revealedSafe === s.safeTotal,
+        targetPercent: anomaly.id === 'elite' ? 75 : 70,
+        width: SIZE, height: SIZE
+      };
+    }
+
+    snapshot() { return copy(this.state); }
+    serialize() { return JSON.stringify(this.state); }
+  }
+
+  ExpeditionEngine.UPGRADES = UPGRADES;
+  ExpeditionEngine.BIOMES = BIOMES;
+  ExpeditionEngine.SHOP = SHOP;
+  ExpeditionEngine.SIZE = SIZE;
+  ExpeditionEngine.neighbors = neighbors;
+  if (typeof module !== 'undefined' && module.exports) module.exports = ExpeditionEngine;
+  root.ExpeditionEngine = ExpeditionEngine;
+})(typeof globalThis !== 'undefined' ? globalThis : this);
+
+</script>
+<script>
+(function () {
+  'use strict';
+  const SAVE_KEY = 'saper-expedition-v1';
+  const $ = id => document.getElementById(id);
+  const esc = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const iconAliases = {battery:'energy',bolt:'energy',refresh:'reset',sparkles:'spark',anchor:'shield',gem:'spark'};
+  const icon = (name, cls = '') => `<svg class="icon ${cls}" aria-hidden="true"><use href="#i-${iconAliases[name] || name}"/></svg>`;
+  const number = n => new Intl.NumberFormat('ru-RU').format(Math.floor(n));
+  const plural = (n,one,few,many) => n%100>=11&&n%100<=14 ? many : n%10===1 ? one : n%10>=2&&n%10<=4 ? few : many;
+  let stored = null;
+  try { stored = JSON.parse(localStorage.getItem(SAVE_KEY)); } catch (_) {}
+  let engine = new ExpeditionEngine(stored && stored.run);
+  const restored = engine.loaded;
+  const settings = {sound: !!stored?.settings?.sound, reducedMotion: !!stored?.settings?.reducedMotion};
+  const validNumber = x => Number.isSafeInteger(x) && x >= 0;
+  let best = {score: validNumber(stored?.best?.score) ? stored.best.score : 0, sector: validNumber(stored?.best?.sector) ? stored.best.sector : 1};
+  let logs = Array.isArray(stored?.logs) ? stored.logs.filter(x => x && typeof x.message === 'string' && typeof x.time === 'string').slice(0, 12) : [];
+  let mode = 'open';
+  let tool = null;
+  let focusedCell = 44;
+  let currentDialog = null;
+  let canSave = true;
+  let audioContext = null;
+  let lastSector = engine.state.sector;
+  let longPress = null;
+  let suppressClick = {index:-1,until:0};
+  const board = $('board');
+  const modal = $('modal');
+  const cellButtons = [];
+
+  function log(message) {
+    const now = new Date();
+    logs.unshift({message, time: now.toLocaleTimeString('ru-RU',{hour:'2-digit',minute:'2-digit'})});
+    logs = logs.slice(0, 12);
+  }
+
+  function save() {
+    best.score = Math.max(best.score, engine.state.score);
+    best.sector = Math.max(best.sector, engine.state.sector);
+    try {
+      localStorage.setItem(SAVE_KEY, JSON.stringify({run:engine.snapshot(), best, logs, settings}));
+      canSave = true;
+    } catch (_) { canSave = false; }
+    $('saveStatus').classList.toggle('unsaved', !canSave);
+    $('saveStatus').innerHTML = `<span></span>${canSave ? 'Прогресс сохранён' : 'Сохранение недоступно'}`;
+  }
+
+  function sound(type) {
+    if (!settings.sound) return;
+    try {
+      if (!audioContext) audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      if (audioContext.state === 'suspended') audioContext.resume();
+      const patterns = {open:[[480,.06,0],[640,.09,.035]],flag:[[320,.065,0]],scan:[[360,.13,0],[680,.16,.1],[900,.1,.18]],emp:[[180,.18,0],[420,.15,.12],[780,.16,.22]],mine:[[100,.3,0],[65,.25,.08]],shield:[[220,.15,0],[500,.2,.07]],reward:[[440,.12,0],[550,.12,.1],[660,.12,.2],[880,.25,.3]],error:[[180,.09,0]],click:[[550,.07,0]]};
+      for (const [frequency,duration,delay] of patterns[type] || patterns.click) {
+        const oscillator = audioContext.createOscillator();
+        const gain = audioContext.createGain();
+        oscillator.type = type === 'mine' ? 'triangle' : 'sine';
+        const start = audioContext.currentTime + delay;
+        oscillator.frequency.setValueAtTime(frequency, start);
+        gain.gain.setValueAtTime(0, start);
+        gain.gain.linearRampToValueAtTime(.045, start+.008);
+        gain.gain.exponentialRampToValueAtTime(.001, start+duration);
+        oscillator.connect(gain); gain.connect(audioContext.destination);
+        oscillator.start(start); oscillator.stop(start+duration+.02);
+      }
+    } catch (_) { /* Audio is optional; gameplay remains available. */ }
+  }
+
+  function toast(message, error = false) {
+    const region = $('toastRegion');
+    while (region.children.length >= 2) region.firstElementChild.remove();
+    const node = document.createElement('div');
+    node.className = `toast${error ? ' error' : ''}`;
+    node.innerHTML = icon(error ? 'help' : 'spark') + `<span>${esc(message)}</span>`;
+    region.append(node);
+    setTimeout(() => { node.classList.add('out'); setTimeout(() => node.remove(), 250); }, 3400);
+  }
+
+  function boardEffect(effect) {
+    if (settings.reducedMotion || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const wrap = $('boardWrap');
+    wrap.classList.remove(effect);
+    void wrap.offsetWidth;
+    wrap.classList.add(effect);
+    setTimeout(() => wrap.classList.remove(effect), 650);
+  }
+
+  function celebrate() {
+    if (settings.reducedMotion || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const region = $('particles');
+    for (let i=0; i<22; i++) {
+      const node = document.createElement('span');
+      node.className = 'particle';
+      const angle = Math.PI*2*i/22;
+      const radius = 80+Math.random()*130;
+      node.style.setProperty('--tx', `${Math.cos(angle)*radius}px`);
+      node.style.setProperty('--ty', `${Math.sin(angle)*radius}px`);
+      node.style.background = i%3 === 0 ? 'var(--gold)' : 'var(--accent)';
+      region.append(node);
+      setTimeout(() => node.remove(), 750);
+    }
+  }
+
+  function renderBoard(opened = []) {
+    const s = engine.state;
+    const fresh = new Set(opened);
+    if (!cellButtons.length) {
+      for (let i=0; i<100; i++) {
+        const cell = document.createElement('button');
+        cell.type = 'button'; cell.dataset.index = i; cell.setAttribute('role','gridcell');
+        cell.tabIndex = i === focusedCell ? 0 : -1;
+        cellButtons.push(cell); board.append(cell);
+      }
+    }
+    s.cells.forEach((c,i) => {
+      const node = cellButtons[i];
+      const overMine = s.status === 'over' && c.mine && !c.revealed;
+      let cls = 'cell';
+      let content = '';
+      let description = 'закрытая клетка';
+      if (c.revealed) {
+        cls += ` revealed n${c.n}`;
+        if (c.mine) { cls += ' exploded'; content = icon('mine'); description = 'взорванная мина, учитывается в цифрах'; }
+        else { content = c.n ? String(c.n) : ''; description = c.n ? `открыта, рядом мин: ${c.n}. Нажать — открыть соседей при верных флагах` : 'открыта, рядом мин нет'; }
+      } else if (c.flagged) {
+        cls += ' flagged'; content = icon('flag'); description = 'установлен флаг';
+        if (s.status === 'over' && !c.mine) { cls += ' wrong-flag'; content = icon('close'); description = 'ошибочный флаг'; }
+      } else if (overMine) {
+        cls += ' gameover-mine'; content = icon('mine'); description = 'мина';
+      } else if (c.scanned) {
+        cls += ' scanned';
+        if (c.mine) { cls += ' mine-known'; content = icon('mine'); description = 'сонар обнаружил мину'; }
+        else { content = icon('check'); description = 'сонар подтвердил безопасность, можно открыть'; }
+      }
+      if (c.neutralized) { cls += ' neutralized'; content += '<span class="neutralized-mark"></span>'; }
+      if (c.revealed && !c.mine && c.loot) content += '<span class="loot-mark" title="Здесь найдена добыча"></span>';
+      if (fresh.has(i)) cls += ' just-opened';
+      if (!s.generated && i === 44 && !c.flagged) cls += ' safe-start';
+      node.className = cls;
+      if (node.innerHTML !== content) node.innerHTML = content;
+      node.disabled = s.status !== 'playing';
+      node.tabIndex = i === focusedCell ? 0 : -1;
+      node.setAttribute('aria-label', `${'ABCDEFGHIJ'[i%10]}${Math.floor(i/10)+1}: ${description}`);
+      node.setAttribute('aria-selected', c.flagged ? 'true' : 'false');
+    });
+    board.classList.toggle('is-targeting', !!tool);
+    board.setAttribute('aria-label', `Минное поле 10 на 10. Сектор ${s.sector}. ${tool ? 'Выберите центр области для инструмента.' : 'Стрелки — перемещение, Enter — открыть, F — флаг.'}`);
+  }
+
+  function render(opened = []) {
+    const s = engine.state, info = engine.getInfo();
+    const colors = {verdant:'#c6f87c', frost:'#8bdbed', crystal:'#c4a5f8', magma:'#ffc08b'};
+    const accent = colors[info.biome.id] || colors.verdant;
+    document.documentElement.style.setProperty('--accent', accent);
+    document.documentElement.style.setProperty('--accent-rgb', [1,3,5].map(n => parseInt(accent.slice(n,n+2),16)).join(','));
+    document.body.dataset.biome = info.biome.id;
+    document.body.classList.toggle('reduced-motion', settings.reducedMotion);
+    $('depthValue').textContent = number(s.sector * 100);
+    $('depthValue').style.fontSize = s.sector >= 10000 ? '24px' : s.sector >= 100 ? '30px' : '';
+    $('sectorNumber').textContent = String(s.sector).padStart(2,'0');
+    $('sectorNumber').style.fontSize = s.sector >= 1000 ? '14px' : '';
+    $('biomeName').textContent = info.biome.name;
+    $('biomeName').title = info.biome.subtitle;
+    $('mineValue').textContent = info.remainingMines;
+    $('hearts').innerHTML = Array.from({length:s.maxHp},(_,i) => icon('heart', i>=s.hp ? 'empty' : '')).join('');
+    $('hearts').setAttribute('aria-label', `${s.hp} из ${s.maxHp} здоровья`);
+    $('shieldValue').innerHTML = `${s.shields} <small>/ ${s.maxShields}</small>`;
+    $('energyValue').innerHTML = `${s.energy} <small>/ ${s.maxEnergy}</small>`;
+    $('energyBar').innerHTML = Array.from({length:s.maxEnergy},(_,i) => `<span class="energy-segment${i<s.energy ? ' filled' : ''}"></span>`).join('');
+    $('energyBar').setAttribute('aria-label', `${s.energy} из ${s.maxEnergy} энергии`);
+    $('coinValue').textContent = number(s.coins);
+    $('scoreValue').textContent = number(s.score);
+    $('bestScore').innerHTML = `${number(Math.max(best.score,s.score))} <small>очков</small>`;
+    $('conditionText').textContent = info.anomaly.name;
+    const brief = {quiet:'Можно не спешить',elite:'+2 мины · выход на 75%',ion:'Сонар и импульс: +1 энергия',cache:'Двойная добыча в тайниках',fault:'Взрыв наносит 2 урона',blackout:`Энергия за ${info.energyEvery} клеток`};
+    $('conditionShort').textContent = brief[info.anomaly.id] || info.anomaly.description;
+    $('condition').title = info.anomaly.description;
+    $('condition').classList.toggle('danger', !['quiet','cache'].includes(info.anomaly.id));
+    $('routeList').innerHTML = [0,1,2].map(offset => {
+      const next = s.sector+offset;
+      const biome = ExpeditionEngine.BIOMES[Math.floor((next-1)/3)%ExpeditionEngine.BIOMES.length];
+      return `<div class="route-item${offset===0 ? ' current' : ''}"><span class="route-node">${offset===0 ? icon('down') : String(next).padStart(2,'0')}</span><div class="route-copy"><strong>${esc(biome.name)}</strong><small>${number(next*100)} м · ${offset===0 ? 'Вы здесь' : next%5===0 ? 'Узел аномалии' : 'Не исследовано'}</small></div></div>`;
+    }).join('');
+    $('probeCost').innerHTML = info.probeCost===0 ? `${s.freeProbes} БЕСПЛАТНО` : `${icon('energy')}${info.probeCost} ЭНЕРГИИ`;
+    $('probeCost').classList.toggle('free', info.probeCost===0);
+    $('sonarCost').innerHTML = `${icon('energy')}${info.sonarCost} ЭНЕРГИИ`;
+    $('empCost').innerHTML = `${icon('energy')}${info.empCost} ЭНЕРГИИ`;
+    $('regenNote').textContent = `+1 энергия за ${info.energyEvery} открытых клеток`;
+    for (const name of ['probe','sonar','emp']) {
+      const node = $(name+'Tool');
+      const blocked = s.status!=='playing' || (name!=='probe' && !s.generated) || s.energy<info[name+'Cost'] || (name==='probe' && info.fullClear);
+      node.disabled = blocked;
+      node.classList.toggle('selected', tool===name);
+      node.setAttribute('aria-pressed', tool===name ? 'true' : 'false');
+      node.title = s.status!=='playing' ? 'Завершите привал или начните новую экспедицию' : name!=='probe'&&!s.generated ? 'Сначала откройте первую клетку' : s.energy<info[name+'Cost'] ? 'Недостаточно энергии' : name==='probe' ? 'Безопасное открытие. Бесплатный заряд обновляется в каждом секторе.' : 'Выберите инструмент, затем центр области на поле.';
+    }
+    const pct = Math.floor(info.progress*100);
+    $('goalPercent').innerHTML = `${pct}<span>%</span>`;
+    $('goalBar').style.width = pct+'%';
+    $('goalRing').style.setProperty('--progress',pct+'%');
+    const requiredPct = s.safeTotal ? s.target/s.safeTotal*100 : info.targetPercent;
+    $('goalMarker').style.left = requiredPct+'%';
+    const remaining = Math.max(0,s.target-s.revealedSafe);
+    $('goalText').textContent = s.status==='camp' ? 'Привал готов. Купи припасы и выбери одно улучшение для следующего сектора.' : info.fullClear ? 'Безопасных клеток больше нет. Забирай дополнительную награду и двигайся глубже.' : info.canExtract ? 'Путь открыт. Можно идти дальше или закончить зачистку ради большей награды.' : `Открой ещё ${remaining} ${plural(remaining,'безопасную клетку','безопасные клетки','безопасных клеток')}, чтобы продолжить спуск.`;
+    $('goalPanel').classList.toggle('ready',info.canExtract || s.status==='camp');
+    const extract = $('extractButton');
+    extract.disabled = s.status==='playing' ? !info.canExtract : s.status==='over';
+    extract.innerHTML = s.status==='camp' ? `${icon('box')}<span>Выбрать улучшение</span>` : info.canExtract ? `${icon('arrow')}<span>${info.fullClear ? 'Забрать награду' : 'В следующий сектор'}</span>` : `${icon('lock')}<span>${s.status==='over' ? 'Экспедиция завершена' : 'Путь ещё закрыт'}</span>`;
+    $('modeOpen').classList.toggle('active',mode==='open');
+    $('modeOpen').setAttribute('aria-pressed',String(mode==='open'));
+    $('modeFlag').classList.toggle('active',mode==='flag');
+    $('modeFlag').setAttribute('aria-pressed',String(mode==='flag'));
+    $('comboValue').textContent = '×'+info.multiplier.toFixed(2);
+    $('comboDisplay').classList.toggle('hot',info.multiplier>1);
+    $('comboDisplay').title = `${s.combo} ходов без взрыва. Каждые 5 ходов множитель очков растёт на 0,25, до ×2,5.`;
+    const message = $('boardMessage');
+    message.className = 'board-message';
+    if (tool) {
+      message.classList.add('tool-message');
+      message.innerHTML = `${icon(tool==='emp'?'emp':'radar')}<span>${tool==='emp'?'Импульс':'Сонар'}: выбери центр области 3 × 3.</span><button data-action="cancel-tool">Отмена</button>`;
+    } else if (s.status==='over') {
+      message.classList.add('warning');
+      message.innerHTML = `${icon('mine')}<span>Экспедиция завершена.</span><button class="secondary-button" data-action="result" style="padding:3px 8px;min-height:0;font-size:9px">Результаты</button>`;
+    } else if (s.status==='camp') message.innerHTML = `${icon('box')}<span>Время привала. Следующий сектор ждёт.</span>`;
+    else if (!s.generated) message.innerHTML = `${icon('shield')}<span>Начни с любой клетки. Первый ход безопасен.</span>`;
+    else if (mode==='flag') message.innerHTML = `${icon('flag')}<span>Режим флага: нажми на закрытую клетку, чтобы отметить мину.</span>`;
+    else if (info.fullClear) message.innerHTML = `${icon('spark')}<span>Чистая работа! Все безопасные клетки открыты.</span>`;
+    else if (info.canExtract) message.innerHTML = `${icon('arrow')}<span>Путь дальше открыт. Рискнуть или забрать награду?</span>`;
+    else if (info.anomaly.id==='fault') {message.classList.add('warning');message.innerHTML = `${icon('shield')}<span>Осторожно: мины наносят 2 урона. Щит поглощает весь удар.</span>`;}
+    else message.innerHTML = `${icon('probe')}<span>${s.revealedSafe} из ${s.safeTotal} безопасных клеток открыто · ${s.freeProbes ? 'Бесплатный зонд готов' : 'Не спеши — таймера нет'}</span>`;
+    $('soundButton').innerHTML = icon(settings.sound?'volume':'mute');
+    $('soundButton').setAttribute('aria-label',settings.sound?'Выключить звук':'Включить звук');
+    $('soundButton').setAttribute('aria-pressed',String(settings.sound));
+    $('soundButton').title = settings.sound?'Выключить звук':'Включить звук';
+    const latest = logs[0];
+    $('journalEntries').innerHTML = latest ? `<span class="log-time">${esc(latest.time)}</span><span class="log-new">${esc(latest.message)}</span>` : 'Связь установлена. Поле ждёт первого хода.';
+    $('journalEntries').title = logs.map(x => `${x.time} — ${x.message}`).join('\n');
+    renderBoard(opened);
+  }
+
+  function handleResult(result, action) {
+    if (!result.ok) { if(result.reason) toast(result.reason,true); sound('error'); return false; }
+    const events = result.events || [];
+    const important = events.filter(e => e.message && !['probe','camp','gameover'].includes(e.type));
+    if (important.length) important.forEach(e => log(e.message));
+    else if (result.opened?.length) log(`Открыто клеток: ${result.opened.length}. Экспедиция продолжается.`);
+    if (action==='chooseUpgrade') {
+      const upgrade = events.find(e=>e.type==='upgrade');
+      if(upgrade) toast(`Получено улучшение: ${upgrade.name}`);
+    }
+    if (events.some(e=>e.type==='mine'||e.type==='shield')) {
+      boardEffect('shake');
+      const hit = events.find(e=>e.type==='mine'||e.type==='shield');
+      toast(hit.message,hit.type==='mine');
+      sound(hit.type==='mine'?'mine':'shield');
+    } else if (events.some(e=>e.type==='cleared'||e.type==='extract-ready')) {
+      const ready = events.find(e=>e.type==='cleared') || events.find(e=>e.type==='extract-ready');
+      toast(ready.message); celebrate(); sound('reward');
+    } else {
+      const infoEvent = events.find(e=>['scan','emp','probe','buy','rescue'].includes(e.type));
+      if (infoEvent?.message) toast(infoEvent.message);
+      const loot = events.filter(e=>e.type==='loot');
+      if (loot.length) toast(loot.map(e=>e.message).join(' · '));
+      sound(action==='sonar'?'scan':action==='emp'?'emp':action==='flag'?'flag':action==='extract'||action==='chooseUpgrade'?'reward':'open');
+    }
+    if(action==='sonar'||action==='emp') boardEffect('pulse');
+    if(action!=='flag') tool=null;
+    if (lastSector!==engine.state.sector) {lastSector=engine.state.sector;mode='open';focusedCell=44;}
+    save(); render(result.opened || []);
+    if(engine.state.status==='camp') showCamp();
+    else if(engine.state.status==='over') showGameOver();
+    return true;
+  }
+
+  function act(method, argument) {
+    const result = argument===undefined ? engine[method]() : engine[method](argument);
+    return handleResult(result,method);
+  }
+
+  function setTool(name) {
+    const s = engine.state, info = engine.getInfo();
+    if(s.status!=='playing') return;
+    if(!s.generated){toast('Сначала открой любую клетку. Первый ход безопасен.');return;}
+    if(s.energy<info[name+'Cost']){toast('Не хватает энергии. Открывай безопасные клетки, чтобы восстановить запас.',true);return;}
+    tool=tool===name?null:name;mode='open';sound('click');render();
+    if(tool && innerWidth<761) $('boardPanel')?.scrollIntoView({behavior:settings.reducedMotion?'instant':'smooth',block:'center'});
+  }
+
+  function openModal(type, content) {
+    currentDialog=type;
+    $('modalContent').innerHTML=content;
+    if(!modal.open) modal.showModal();
+  }
+  function closeModal() {modal.close();currentDialog=null;}
+  const closeButton = () => `<button class="icon-button modal-close" data-action="close-modal" aria-label="Закрыть">${icon('close')}</button>`;
+
+  function showHelp() {
+    openModal('help',`${closeButton()}<div class="modal-eyebrow">${icon('map')}ПОЛЕВОЙ СПРАВОЧНИК</div><h2 class="modal-title" id="modalTitle">Всё начинается с одного хода.</h2><p class="modal-intro">Классический сапёр, который уходит всё глубже. Читай цифры, береги здоровье и решай, когда пора двигаться дальше.</p><div class="help-grid"><section class="help-card"><h3>${icon('target')}Читай поле</h3><p>Цифра — количество мин в восьми соседних клетках. Пустая клетка раскрывает безопасную область. Первый ход и все соседние клетки всегда безопасны.</p><div class="help-demo"><span class="demo-cell open">1</span><span class="demo-cell">${icon('flag')}</span><span class="demo-cell open">1</span></div></section><section class="help-card"><h3>${icon('flag')}Отмечай мины</h3><p>Правый клик или режим «Флаг». На телефоне можно удерживать клетку. Нажми на открытую цифру, когда все соседние мины отмечены: остальные соседи откроются. Ошибочные флаги опасны!</p></section><section class="help-card"><h3>${icon('radar')}Используй снаряжение</h3><p>Зонд сам открывает безопасную клетку. Сонар показывает мины и безопасные клетки в зоне 3 × 3. Импульс обезвреживает мины в этой зоне и пересчитывает цифры. Для сонара и импульса выбери центр области.</p></section><section class="help-card"><h3>${icon('arrow')}Иди глубже</h3><p>Открой 70% безопасных клеток и отправляйся на привал. Полная зачистка приносит больше кредитов и очков. На привале можно купить припасы, затем выбрать одно бесплатное улучшение.</p></section><section class="help-card"><h3>${icon('shield')}Береги скафандр</h3><p>Щит полностью поглощает один взрыв. Без щита теряется здоровье; при нуле экспедиция заканчивается. Взорванная мина продолжает учитываться соседними цифрами. Энергия восстанавливается за новые открытые клетки.</p></section><section class="help-card"><h3>${icon('mountain')}Неизвестность впереди</h3><p>Мины постепенно становятся плотнее, появляются аномалии. Их условия показаны над полем. Каждый пятый сектор особый: выход на 75%. Секторы бесконечны, таймера нет. Иногда нужен зонд или риск: поля не гарантируют решение только логикой.</p></section></div><label class="motion-setting"><input type="checkbox" id="motionToggle" ${settings.reducedMotion?'checked':''}> Уменьшить анимацию</label><div class="modal-footer"><span class="modal-note">1 — зонд · 2 — сонар · 3 — импульс · F — флаг<br>Стрелки + Enter — игра с клавиатуры · Esc — отменить инструмент<br>Прогресс сохраняется в этом браузере после каждого действия.</span><button class="primary-button" data-action="close-modal">Всё понятно. Вперёд ${icon('arrow')}</button></div>`);
+  }
+
+  function showCamp() {
+    const s=engine.state;
+    if(s.status!=='camp') return;
+    const reward=s.lastSectorReward || {coins:0,score:0,fullClear:false};
+    const cards=s.offers.map(id=>{
+      const u=ExpeditionEngine.UPGRADES[id];
+      let description=u.description;
+      if(id==='medkit'&&s.hp===s.maxHp) description='Здоровье уже полное: вместо лечения получишь 14 кредитов.';
+      if(id==='shield'&&s.shields===s.maxShields) description='Щиты уже полные: вместо щита получишь 12 кредитов.';
+      if(id==='energy'&&s.energy===s.maxEnergy) description='Энергия уже полная: вместо заряда получишь 9 кредитов.';
+      return `<button class="upgrade-card" data-upgrade="${id}"><span class="upgrade-icon">${icon(u.icon)}</span><h3>${esc(u.name)}</h3><p>${esc(description)}</p><span class="choose-label">ВЗЯТЬ И ИДТИ ДАЛЬШЕ ${icon('arrow')}</span></button>`;
+    }).join('');
+    const shop=Object.values(ExpeditionEngine.SHOP).map(item=>{
+      const full=item.id==='medkit'?s.hp>=s.maxHp:item.id==='shield'?s.shields>=s.maxShields:s.energy>=s.maxEnergy;
+      return `<button class="shop-button" data-buy="${item.id}" ${s.coins<item.cost||full?'disabled':''} title="${esc(item.description)}${full?' · Запас полный':''}">${icon(item.icon)}<span><strong>${esc(item.name)}</strong><small>${icon('coin')}${item.cost} · ${esc(item.description)}</small></span></button>`;
+    }).join('');
+    openModal('camp',`${closeButton()}<div class="modal-eyebrow">${icon('check')}СЕКТОР ${s.sector} ${reward.fullClear?'ПОЛНОСТЬЮ ЗАЧИЩЕН':'ПРОЙДЕН'}</div><h2 class="modal-title" id="modalTitle">Перед следующим спуском.</h2><p class="modal-intro">Хорошая работа, исследователь. Пополни запасы и выбери <strong>одно бесплатное улучшение</strong>. Впереди сектор ${s.sector+1}.</p><div class="reward-summary"><span>${icon('coin')}+${number(reward.coins)} кредитов</span><span>${icon('spark')}+${number(reward.score)} очков</span><span>${icon('energy')}Энергия: ${s.energy}/${s.maxEnergy}</span></div><div class="section-label">СНАЧАЛА ПРИПАСЫ · У ТЕБЯ ${number(s.coins)} КРЕДИТОВ</div><div class="shop-grid">${shop}</div><div class="section-label">ЗАТЕМ ОДНО УЛУЧШЕНИЕ · БЕСПЛАТНО</div><div class="upgrade-options">${cards}</div><div class="modal-footer"><span class="modal-note">Здоровье: ${s.hp}/${s.maxHp} · Щиты: ${s.shields}/${s.maxShields}<br>Выбор улучшения сразу начинает следующий сектор.</span><button class="secondary-button" data-action="close-modal">Осмотреть поле</button></div>`);
+  }
+
+  function showGameOver() {
+    const s=engine.state;
+    openModal('over',`${closeButton()}<div class="gameover-art">${icon('helmet')}</div><div class="modal-eyebrow">СВЯЗЬ С ЭКСПЕДИЦИЕЙ ПОТЕРЯНА</div><h2 class="modal-title" id="modalTitle">Но глубина ещё зовёт.</h2><p class="modal-intro">Каждый спуск учит замечать чуть больше. Рекорд сохранён — а следующий маршрут будет совсем другим.</p><div class="modal-stats"><div class="modal-stat"><strong>${number(s.score)}</strong><span>ОЧКОВ</span></div><div class="modal-stat"><strong>${number(s.sector*100)} м</strong><span>ГЛУБИНА</span></div><div class="modal-stat"><strong>${number(s.totalOpened)}</strong><span>КЛЕТОК ОТКРЫТО</span></div></div><p class="modal-note">${s.score>=best.score&&s.score>0?'Это твой лучший результат. Отличная экспедиция.':`Личный рекорд: ${number(best.score)} очков · максимальная глубина: ${number(best.sector*100)} м.`}</p><div class="modal-footer"><button class="secondary-button" data-action="close-modal">Посмотреть поле</button><button class="primary-button" data-action="restart-now">Новая экспедиция ${icon('arrow')}</button></div>`);
+  }
+
+  function showArsenal() {
+    const s=engine.state;
+    const items=[];
+    if(s.maxHp>3) items.push({name:'Усиленный корпус',desc:`Максимум здоровья: ${s.maxHp}.`,icon:'heart'});
+    if(s.maxEnergy>8) items.push({name:'Ёмкая батарея',desc:`Запас энергии увеличен до ${s.maxEnergy}.`,icon:'energy'});
+    if(s.upgrades.recycler) items.push({name:'Рекуператор',desc:`Базовая регенерация: +1 энергия за ${12-s.upgrades.recycler*2} клеток.`,icon:'reset'});
+    if(s.upgrades.cartographer) items.push({name:'Картограф',desc:`Бесплатных зондов в каждом секторе: ${1+s.upgrades.cartographer}.`,icon:'map'});
+    if(s.upgrades.fortune) items.push({name:'Протокол открытия',desc:`Очки за открытие клеток: +${s.upgrades.fortune*10}%.`,icon:'spark'});
+    if(s.rescueTokens) items.push({name:'Страховочный трос',desc:'Одна защита от смертельного взрыва.',icon:'shield'});
+    openModal('arsenal',`${closeButton()}<div class="modal-eyebrow">${icon('box')}СНАРЯЖЕНИЕ ИССЛЕДОВАТЕЛЯ</div><h2 class="modal-title" id="modalTitle">Твой запас прочности.</h2><p class="modal-intro">Улучшения действуют до конца текущей экспедиции. Новые можно получить на привале после каждого сектора.</p><div class="modal-stats"><div class="modal-stat"><strong>${s.hp}/${s.maxHp}</strong><span>ЗДОРОВЬЕ</span></div><div class="modal-stat"><strong>${s.energy}/${s.maxEnergy}</strong><span>ЭНЕРГИЯ</span></div><div class="modal-stat"><strong>${s.shields}</strong><span>ЩИТЫ</span></div></div>${items.length?`<div class="arsenal-list">${items.map(x=>`<div class="arsenal-item">${icon(x.icon)}<div><strong>${esc(x.name)}</strong><p>${esc(x.desc)}</p></div></div>`).join('')}</div>`:'<div class="arsenal-empty">Пока только базовое снаряжение.<br>Пройди первый сектор — и выбери своё первое улучшение.</div>'}<div class="modal-footer"><span class="modal-note">Обезврежено мин: ${s.totalMinesDefused} · пройдено секторов: ${s.sectorsCleared}<br>Номер экспедиции: ${s.seed.toString(16).toUpperCase()}</span><button class="primary-button" data-action="close-modal">Вернуться на поле ${icon('arrow')}</button></div>`);
+  }
+
+  function confirmRestart() {
+    if((engine.state.sector===1&&!engine.state.generated) || engine.state.status==='over') {restart();return;}
+    openModal('restart',`${closeButton()}<div class="modal-eyebrow">${icon('reset')}НОВЫЙ МАРШРУТ</div><h2 class="modal-title" id="modalTitle">Начать новый спуск?</h2><p class="modal-intro">Текущая экспедиция на глубине ${number(engine.state.sector*100)} м закончится. Личный рекорд останется, а здоровье, снаряжение и маршрут начнутся заново.</p><div class="modal-footer"><button class="secondary-button" data-action="close-modal">Продолжить экспедицию</button><button class="primary-button" data-action="restart-now">Начать заново ${icon('arrow')}</button></div>`);
+  }
+
+  function restart() {
+    save();closeModal();engine=new ExpeditionEngine();mode='open';tool=null;focusedCell=44;lastSector=1;logs=[];
+    log('Новый маршрут проложен. Первый ход безопасен.');
+    save();render();sound('reward');toast('Экспедиция началась. Удачного спуска!');
+  }
+
+  function action(name) {
+    switch(name) {
+      case 'play':if(engine.state.status==='camp')showCamp();else if(engine.state.status==='over')showGameOver();else cellButtons[focusedCell].focus();break;
+      case 'probe':act('probe');break;
+      case 'sonar':setTool('sonar');break;
+      case 'emp':setTool('emp');break;
+      case 'cancel-tool':tool=null;render();break;
+      case 'mode-open':mode='open';tool=null;render();sound('click');break;
+      case 'mode-flag':mode='flag';tool=null;render();sound('click');break;
+      case 'extract':engine.state.status==='camp'?showCamp():act('extract');break;
+      case 'sound':settings.sound=!settings.sound;save();render();sound('click');toast(settings.sound?'Звук включён':'Звук выключен');break;
+      case 'help':showHelp();break;
+      case 'arsenal':showArsenal();break;
+      case 'close-modal':closeModal();break;
+      case 'result':showGameOver();break;
+      case 'restart':confirmRestart();break;
+      case 'restart-now':restart();break;
+    }
+  }
+
+  document.addEventListener('click',event=>{
+    const upgrade=event.target.closest('[data-upgrade]');
+    if(upgrade){const id=upgrade.dataset.upgrade;closeModal();act('chooseUpgrade',id);return;}
+    const purchase=event.target.closest('[data-buy]');
+    if(purchase){act('buy',purchase.dataset.buy);return;}
+    const target=event.target.closest('[data-action]');
+    if(target){event.preventDefault();action(target.dataset.action);}
+  });
+  document.querySelector('.brand').addEventListener('click',event=>{event.preventDefault();showHelp();});
+  document.addEventListener('change',event=>{
+    if(event.target.id==='motionToggle'){settings.reducedMotion=event.target.checked;save();document.body.classList.toggle('reduced-motion',settings.reducedMotion);}
+  });
+  modal.addEventListener('cancel',()=>{currentDialog=null;});
+
+  board.addEventListener('click',event=>{
+    const node=event.target.closest('[data-index]');if(!node)return;
+    const index=Number(node.dataset.index);
+    if(suppressClick.index===index && Date.now()<suppressClick.until){event.preventDefault();return;}
+    focusedCell=index;
+    if(tool) act(tool,index);
+    else act(mode==='flag'?'flag':'open',index);
+  });
+  board.addEventListener('contextmenu',event=>{
+    event.preventDefault();
+    const node=event.target.closest('[data-index]');if(!node)return;
+    const index=Number(node.dataset.index);
+    if(suppressClick.index===index&&Date.now()<suppressClick.until)return;
+    if(tool){tool=null;render();return;}
+    focusedCell=index;act('flag',index);
+  });
+  function clearPress(){if(longPress){clearTimeout(longPress.timer);longPress=null;}}
+  board.addEventListener('pointerdown',event=>{
+    suppressClick={index:-1,until:0};
+    if(event.pointerType==='mouse'||event.button!==0||tool||engine.state.status!=='playing')return;
+    const node=event.target.closest('[data-index]');if(!node)return;
+    clearPress();
+    const index=Number(node.dataset.index);
+    longPress={x:event.clientX,y:event.clientY,index,timer:setTimeout(()=>{
+      suppressClick={index,until:Infinity};focusedCell=index;act('flag',index);clearPress();
+      if(navigator.vibrate) navigator.vibrate(15);
+    },450)};
+  });
+  board.addEventListener('pointermove',event=>{
+    if(longPress&&Math.hypot(event.clientX-longPress.x,event.clientY-longPress.y)>9)clearPress();
+    if(!tool)return;
+    const node=event.target.closest('[data-index]');
+    cellButtons.forEach(n=>n.classList.remove('target-zone','emp-zone'));
+    if(!node)return;
+    const index=Number(node.dataset.index),x=index%10,y=Math.floor(index/10);
+    for(let yy=Math.max(0,y-1);yy<=Math.min(9,y+1);yy++)for(let xx=Math.max(0,x-1);xx<=Math.min(9,x+1);xx++){
+      cellButtons[yy*10+xx].classList.add('target-zone');
+      if(tool==='emp')cellButtons[yy*10+xx].classList.add('emp-zone');
+    }
+  });
+  ['pointerup','pointercancel'].forEach(type=>board.addEventListener(type,()=>{
+    clearPress();
+    if(suppressClick.until===Infinity)suppressClick.until=Date.now()+900;
+  }));
+  board.addEventListener('pointerleave',clearPress);
+  board.addEventListener('pointerleave',()=>cellButtons.forEach(n=>n.classList.remove('target-zone','emp-zone')));
+  board.addEventListener('focusin',event=>{
+    const node=event.target.closest('[data-index]');if(!node)return;
+    focusedCell=Number(node.dataset.index);
+    cellButtons.forEach((b,i)=>b.tabIndex=i===focusedCell?0:-1);
+  });
+  board.addEventListener('keydown',event=>{
+    const directions={ArrowLeft:-1,ArrowRight:1,ArrowUp:-10,ArrowDown:10};
+    if(event.key in directions){
+      event.preventDefault();let target=focusedCell+directions[event.key];
+      if(event.key==='ArrowLeft'&&focusedCell%10===0)return;
+      if(event.key==='ArrowRight'&&focusedCell%10===9)return;
+      if(target>=0&&target<100)cellButtons[target].focus();
+    }
+  });
+  document.addEventListener('keydown',event=>{
+    if(event.ctrlKey||event.altKey||event.metaKey||event.repeat)return;
+    if(modal.open)return;
+    if(['INPUT','TEXTAREA','SELECT'].includes(event.target.tagName))return;
+    if(event.key==='Escape'){tool=null;render();return;}
+    const key=event.key.toLowerCase();
+    if(['1','2','3'].includes(key)){event.preventDefault();action({1:'probe',2:'sonar',3:'emp'}[key]);}
+    if(key==='f'||key==='а'){
+      event.preventDefault();
+      const cell=event.target.closest('[data-index]');
+      if(cell)act('flag',Number(cell.dataset.index));
+      else action(mode==='open'?'mode-flag':'mode-open');
+    }
+    if(event.key==='?'||event.key==='F1'){event.preventDefault();showHelp();}
+  });
+  // Every completed action is already saved. Do not overwrite newer saves when
+  // an old tab is hidden or closed. Other tabs adopt the latest valid run.
+  window.addEventListener('storage',event=>{
+    if(event.key!==SAVE_KEY||!event.newValue)return;
+    try {
+      const incoming=JSON.parse(event.newValue);
+      const next=new ExpeditionEngine(incoming.run);
+      if(!next.loaded)return;
+      engine=next;lastSector=engine.state.sector;tool=null;
+      if(validNumber(incoming.best?.score))best.score=Math.max(best.score,incoming.best.score);
+      if(validNumber(incoming.best?.sector))best.sector=Math.max(best.sector,incoming.best.sector);
+      if(Array.isArray(incoming.logs))logs=incoming.logs.filter(x=>x&&typeof x.message==='string'&&typeof x.time==='string').slice(0,12);
+      closeModal();render();
+      if(engine.state.status==='camp')showCamp();
+      if(engine.state.status==='over')showGameOver();
+    } catch(_) {}
+  });
+
+  if(!logs.length) log(restored?'Экспедиция восстановлена. Продолжим спуск.':'Связь установлена. Поле ждёт первого хода.');
+  save();render();
+  if(engine.state.status==='camp')showCamp();
+  if(engine.state.status==='over')showGameOver();
+  if(stored?.run&&!restored)toast('Сохранение повреждено или устарело. Начата новая экспедиция.',true);
+  if(!canSave)toast('Браузер не разрешил сохранение. Эта экспедиция доступна, пока открыта вкладка.',true);
+})();
+
+</script>
+</body>
+</html>
